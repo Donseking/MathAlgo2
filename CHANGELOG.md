@@ -4,7 +4,7 @@
 格式基於 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.0.0/)，
 並且本專案遵循 [Semantic Versioning](https://semver.org/lang/zh-TW/)。
 
-## [0.1.0] - 2024-12-25
+## [0.3.0] - 2024-12-28
 
 ### 新增 (Added)
 - 初始版本發布
@@ -35,8 +35,6 @@
 
 ### 安全性 (Security)
 - 無
-
-## [未發布]
 
 ### 計劃中
 - 添加更多數學函數
