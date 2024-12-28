@@ -2,11 +2,12 @@ from typing import List, Dict, Any, Optional, Tuple, Union, Callable
 from abc import ABC, abstractmethod
 import matplotlib.pyplot as plt
 import numpy as np
-from mathalgo2.logger import setup_logger, logging
+from mathalgo2.Logger import Logger, logging
 import os
 from pathlib import Path
 from collections import deque
 import heapq
+from datetime import datetime
 
 """
 # GraphAlgo 模組
@@ -32,7 +33,18 @@ import heapq
 # 設置根目錄和日誌
 ROOT_DIR = Path(__file__).parent.parent.parent
 log_file = ROOT_DIR / "__log__" / "GraphAlgo.log"
-logger = setup_logger("GraphAlgo", log_file, level=logging.INFO)
+
+# 初始化日誌管理器
+logger_manager = Logger(
+    name="GraphAlgo",
+    log_file=str(log_file),
+    level=logging.INFO,
+    format_string="%(asctime)s - [%(levelname)s] - GraphAlgo - %(message)s",
+    rotation_size=2*1024*1024,  # 2MB
+    backup_count=3,
+    console_output=True
+)
+logger = logger_manager.get_logger()
 
 class Algorithm(ABC):
     """演算法基礎抽象類別
@@ -146,46 +158,51 @@ class GraphAlgo(Algorithm):
         Returns:
             (distances, predecessors): 距離字典和前驅節點字典
         """
-        self._validate_start_node(start)
-        self.logger.info(f"開始Dijkstra算法，起始節點: {start}")
-        
-        distances = {node: float('infinity') for node in self.graph}
-        distances[start] = 0
-        predecessors = {node: None for node in self.graph}
-        pq = [(0, start)]
-        visited = set()
-        
-        while pq:
-            current_distance, current = heapq.heappop(pq)
+        try:
+            self._validate_start_node(start)
+            self.logger.info(f"開始Dijkstra算法，起始節點: {start}")
             
-            if current in visited:
-                continue
-                
-            visited.add(current)
-            self.colors[current] = self.node_colors['visiting']
+            distances = {node: float('infinity') for node in self.graph}
+            distances[start] = 0
+            predecessors = {node: None for node in self.graph}
+            pq = [(0, start)]
+            visited = set()
             
-            if self.fig is not None:
-                self._update_graph_plot()
+            while pq:
+                current_distance, current = heapq.heappop(pq)
                 
-            if current == end:
-                break
-                
-            for neighbor in self.graph[current]:
-                if neighbor in visited:
+                if current in visited:
                     continue
                     
-                weight = self.weights.get((current, neighbor)) or self.weights.get((neighbor, current), 1.0)
-                distance = current_distance + weight
+                visited.add(current)
+                self.colors[current] = self.node_colors['visiting']
                 
-                if distance < distances[neighbor]:
-                    distances[neighbor] = distance
-                    predecessors[neighbor] = current
-                    heapq.heappush(pq, (distance, neighbor))
+                if self.fig is not None:
+                    self._update_graph_plot()
                     
-            self.colors[current] = self.node_colors['visited']
+                if current == end:
+                    break
+                    
+                for neighbor in self.graph[current]:
+                    if neighbor in visited:
+                        continue
+                        
+                    weight = self.weights.get((current, neighbor)) or self.weights.get((neighbor, current), 1.0)
+                    distance = current_distance + weight
+                    
+                    if distance < distances[neighbor]:
+                        distances[neighbor] = distance
+                        predecessors[neighbor] = current
+                        heapq.heappush(pq, (distance, neighbor))
+                        
+                self.colors[current] = self.node_colors['visited']
+                
+            self.logger.info("Dijkstra算法完成")
+            return distances, predecessors
             
-        self.logger.info("Dijkstra算法完成")
-        return distances, predecessors
+        except Exception as e:
+            self.logger.exception(f"Dijkstra算法執行出錯: {str(e)}")
+            raise
         
     def get_shortest_path(self, start: Any, end: Any) -> Tuple[List[Any], float]:
         """獲取兩點間的最短路徑
@@ -225,34 +242,39 @@ class GraphAlgo(Algorithm):
         Returns:
             訪問順序列表
         """
-        self._validate_start_node(start)
-        self.logger.info(f"開始DFS搜尋，起始節點: {start}")
-        
-        visited = set()
-        result = []
-        
-        def _dfs_helper(vertex: Any):
-            visited.add(vertex)
-            result.append(vertex)
-            self.logger.debug(f"訪問節點: {vertex}")
-            self.colors[vertex] = self.node_colors['visiting']
+        try:
+            self._validate_start_node(start)
+            self.logger.info(f"開始DFS搜尋，起始節點: {start}")
             
-            if callback:
-                callback(vertex)
-                
-            if self.fig is not None:
-                self._update_graph_plot()
-                
-            for neighbor in self.graph[vertex]:
-                if neighbor not in visited:
-                    self.logger.debug(f"從 {vertex} 訪問鄰居節點 {neighbor}")
-                    _dfs_helper(neighbor)
+            visited = set()
+            result = []
             
-            self.colors[vertex] = self.node_colors['visited']
+            def _dfs_helper(vertex: Any):
+                visited.add(vertex)
+                result.append(vertex)
+                self.logger.debug(f"訪問節點: {vertex}")
+                self.colors[vertex] = self.node_colors['visiting']
+                
+                if callback:
+                    callback(vertex)
                     
-        _dfs_helper(start)
-        self.logger.info(f"DFS搜尋完成，訪問順序: {result}")
-        return result
+                if self.fig is not None:
+                    self._update_graph_plot()
+                    
+                for neighbor in self.graph[vertex]:
+                    if neighbor not in visited:
+                        self.logger.debug(f"從 {vertex} 訪問鄰居節點 {neighbor}")
+                        _dfs_helper(neighbor)
+                
+                self.colors[vertex] = self.node_colors['visited']
+                    
+            _dfs_helper(start)
+            self.logger.info(f"DFS搜尋完成，訪問順序: {result}")
+            return result
+            
+        except Exception as e:
+            self.logger.exception(f"DFS搜尋執行出錯: {str(e)}")
+            raise
         
     def bfs(self, start: Any, callback: Optional[Callable[[Any], None]] = None) -> List[Any]:
         """廣度優先搜尋演算法 (Breadth-First Search, BFS)
@@ -294,79 +316,85 @@ class GraphAlgo(Algorithm):
             >>> result = graph.bfs('A')
             >>> print(result)  # 可能的輸出: ['A', 'B', 'C', 'D']
         """
-        # 驗證起始節點是否合法
-        self._validate_start_node(start)
-        self.logger.info(f"開始BFS搜尋，起始節點: {start}")
-        self.logger.info(f"圖的結構: {self.graph}")
-        
-        # 初始化資料結構
-        visited = {start}  # 使用集合記錄已訪問的節點，保證O(1)的查詢時間
-        result = []       # 存儲訪問順序的列表
-        queue = deque([start])  # 使用雙端佇列實現FIFO，支援O(1)的頭尾操作
-        
-        self.logger.debug("初始化完成:")
-        self.logger.debug(f"- 已訪問節點集合: {visited}")
-        self.logger.debug(f"- 初始佇列狀態: {list(queue)}")
-        self.logger.debug(f"- 訪問順序列表: {result}")
-        
-        # 主要搜尋迴圈 - 當佇列非空時持續執行
-        iteration = 0
-        while queue:
-            iteration += 1
-            self.logger.debug(f"\n=== 迭代 {iteration} 開始 ===")
+        try:
+            self._validate_start_node(start)
+            perf_start = datetime.now()
+            self.logger.info(f"開始BFS搜尋，起始節點: {start}")
+            self.logger.debug(f"圖的結構: {self.graph}")
             
-            # 從佇列前端取出當前要訪問的節點
-            vertex = queue.popleft()
-            result.append(vertex)
-            self.logger.debug(f"從佇列取出節點: {vertex}")
-            self.logger.debug(f"當前佇列狀態: {list(queue)}")
+            visited = {start}  # 使用集合記錄已訪問的節點，保證O(1)的查詢時間
+            result = []       # 存儲訪問順序的列表
+            queue = deque([start])  # 使用雙端佇列實現FIFO，支援O(1)的頭尾操作
             
-            # 更新節點視覺化狀態為正在訪問
-            self.colors[vertex] = self.node_colors['visiting']
-            self.logger.debug(f"將節點 {vertex} 標記為正在訪問狀態 (顏色: {self.node_colors['visiting']})")
+            self.logger.debug("初始化完成:")
+            self.logger.debug(f"- 已訪問節點集合: {visited}")
+            self.logger.debug(f"- 初始佇列狀態: {list(queue)}")
+            self.logger.debug(f"- 訪問順序列表: {result}")
             
-            # 如果提供了回調函數，執行自定義處理
-            if callback:
-                self.logger.debug(f"對節點 {vertex} 執行使用者提供的回調函數")
-                try:
-                    callback(vertex)
-                except Exception as e:
-                    self.logger.error(f"回調函數執行出錯: {str(e)}")
-                    raise
+            # 主要搜尋迴圈 - 當佇列非空時持續執行
+            iteration = 0
+            while queue:
+                iteration += 1
+                self.logger.debug(f"\n=== 迭代 {iteration} 開始 ===")
                 
-            # 更新視覺化顯示
-            if self.fig is not None:
-                self.logger.debug("更新圖形視覺化顯示")
-                self._update_graph_plot()
+                # 從佇列前端取出當前要訪問的節點
+                vertex = queue.popleft()
+                result.append(vertex)
+                self.logger.debug(f"從佇列取出節點: {vertex}")
+                self.logger.debug(f"當前佇列狀態: {list(queue)}")
                 
-            # 處理當前節點的所有相鄰節點
-            neighbors = self.graph[vertex]
-            self.logger.debug(f"節點 {vertex} 的相鄰節點列表: {neighbors}")
-            
-            for neighbor in neighbors:
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    queue.append(neighbor)
-                    self.logger.debug(f"發現未訪問的相鄰節點 {neighbor}:")
-                    self.logger.debug(f"- 加入已訪問集合: {visited}")
-                    self.logger.debug(f"- 加入佇列: {list(queue)}")
-                else:
-                    self.logger.debug(f"相鄰節點 {neighbor} 已被訪問，跳過")
+                # 更新節點視覺化狀態為正在訪問
+                self.colors[vertex] = self.node_colors['visiting']
+                self.logger.debug(f"將節點 {vertex} 標記為正在訪問狀態 (顏色: {self.node_colors['visiting']})")
+                
+                # 如果提供了回調函數，執行自定義處理
+                if callback:
+                    self.logger.debug(f"對節點 {vertex} 執行使用者提供的回調函數")
+                    try:
+                        callback(vertex)
+                    except Exception as e:
+                        self.logger.error(f"回調函數執行出錯: {str(e)}")
+                        raise
                     
-            # 更新節點視覺化狀態為已訪問
-            self.colors[vertex] = self.node_colors['visited']
-            self.logger.debug(f"將節點 {vertex} 標記為已訪問狀態 (顏色: {self.node_colors['visited']})")
-            self.logger.debug(f"=== 迭代 {iteration} 結束 ===\n")
+                # 更新視覺化顯示
+                if self.fig is not None:
+                    self.logger.debug("更新圖形視覺化顯示")
+                    self._update_graph_plot()
+                    
+                # 處理當前節點的所有相鄰節點
+                neighbors = self.graph[vertex]
+                self.logger.debug(f"節點 {vertex} 的相鄰節點列表: {neighbors}")
+                
+                for neighbor in neighbors:
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+                        queue.append(neighbor)
+                        self.logger.debug(f"發現未訪問的相鄰節點 {neighbor}:")
+                        self.logger.debug(f"- 加入已訪問集合: {visited}")
+                        self.logger.debug(f"- 加入佇列: {list(queue)}")
+                    else:
+                        self.logger.debug(f"相鄰節點 {neighbor} 已被訪問，跳過")
+                        
+                # 更新節點視覺化狀態為已訪問
+                self.colors[vertex] = self.node_colors['visited']
+                self.logger.debug(f"將節點 {vertex} 標記為已訪問狀態 (顏色: {self.node_colors['visited']})")
+                self.logger.debug(f"=== 迭代 {iteration} 結束 ===\n")
+                
+            # 搜尋完成，輸出統計信息
+            perf_end = datetime.now()
+            duration = (perf_end - perf_start).total_seconds()
+            self.logger.info(f"BFS搜尋完成:")
+            self.logger.info(f"- 執行時間: {duration:.3f} 秒")
+            self.logger.info(f"- 訪問節點數: {len(result)}")
+            self.logger.info(f"- 訪問順序: {result}")
+            self.logger.debug(f"- 最終已訪問集合: {visited}")
             
-        # 搜尋完成，輸出統計信息
-        self.logger.info("BFS搜尋完成:")
-        self.logger.info(f"- 總迭代次數: {iteration}")
-        self.logger.info(f"- 訪問節點數: {len(result)}")
-        self.logger.info(f"- 訪問順序: {result}")
-        self.logger.debug(f"- 最終已訪問集合: {visited}")
-        
-        return result
-        
+            return result
+            
+        except Exception as e:
+            self.logger.exception(f"BFS搜尋執行出錯: {str(e)}")
+            raise
+            
     def visualize(self, algorithm: str = "dfs", start: Any = None, 
                  end: Any = None, callback: Optional[Callable[[Any], None]] = None):
         """圖論演算法視覺化
@@ -377,13 +405,13 @@ class GraphAlgo(Algorithm):
             end: 目標節點(僅用於最短路徑算法)
             callback: 可選的回調函數，用於自定義節點處理邏輯
         """
-        self.logger.info(f"開始視覺化 {algorithm} 搜尋")
-        self._init_visualization(algorithm.upper())
-        
-        if start is None:
-            start = list(self.graph.keys())[0]
-            
         try:
+            self.logger.info(f"開始視覺化 {algorithm} 搜尋")
+            self._init_visualization(algorithm.upper())
+            
+            if start is None:
+                start = list(self.graph.keys())[0]
+                
             if algorithm.lower() == "dfs":
                 self.dfs(start, callback)
             elif algorithm.lower() == "bfs":
@@ -402,7 +430,7 @@ class GraphAlgo(Algorithm):
             plt.close()
             
         except Exception as e:
-            self.logger.error(f"視覺化過程發生錯誤: {str(e)}")
+            self.logger.exception(f"視覺化過程發生錯誤: {str(e)}")
             raise
             
     def _update_graph_plot(self):

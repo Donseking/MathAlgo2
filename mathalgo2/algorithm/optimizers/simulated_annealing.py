@@ -3,7 +3,7 @@ import numpy as np
 from typing import Tuple
 
 class SimulatedAnnealing(BaseOptimizer):
-    def __init__(self, objective_func, bounds, initial_temp=100.0, cooling_rate=0.95):
+    def __init__(self, objective_func, bounds, initial_temp=100.0, cooling_rate=0.95, **kwargs):
         """初始化模擬退火算法
         
         Args:
@@ -11,17 +11,19 @@ class SimulatedAnnealing(BaseOptimizer):
             bounds: 解的範圍限制
             initial_temp: 初始溫度
             cooling_rate: 降溫速率
+            **kwargs: 其他參數
         """
-        super().__init__(objective_func, bounds)
+        super().__init__(objective_func, bounds, **kwargs)
         self.temp = initial_temp
         self.cooling_rate = cooling_rate
         self.logger.info(f"初始化SimulatedAnnealing最佳化器，初始溫度: {self.temp}, 降溫速率: {self.cooling_rate}")
 
-    def optimize(self, max_iter=1000) -> Tuple[np.ndarray, float]:
+    def _optimize(self, max_iter=1000, **kwargs) -> Tuple[np.ndarray, float]:
         """執行模擬退火最佳化
         
         Args:
             max_iter: 最大迭代次數
+            **kwargs: 其他參數
         
         Returns:
             Tuple[np.ndarray, float]: (最佳解, 最佳適應度值)
@@ -48,9 +50,8 @@ class SimulatedAnnealing(BaseOptimizer):
                 self.logger.debug(f"迭代 {i}: 拒絕新解: {neighbor}, 適應度: {neighbor_fitness}")
             
             # 更新最佳解
-            self._update_best_solution(current_solution, current_fitness, i)
+            self._update_best_solution(current_solution, current_fitness)
             self.history.append(self.best_fitness)
-            self._update_plot(i)
             
             # 降低溫度
             self.temp *= self.cooling_rate

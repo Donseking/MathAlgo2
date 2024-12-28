@@ -3,21 +3,27 @@ from abc import ABC, abstractmethod
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
-from mathalgo2.logger import setup_logger, logging
+from mathalgo2.Logger import Logger, logging
 import os
 from pathlib import Path
 
 # 設置根目錄和日誌
 ROOT_DIR = Path(__file__).parent.parent.parent
 log_file = ROOT_DIR / "__log__" / "SortAlgo.log"
-logger = setup_logger("SortAlgo", log_file, level=logging.INFO)
+
+# 初始化日誌管理器
+logger_manager = Logger(
+    name="SortAlgo",
+    log_file=str(log_file),
+    level=logging.INFO
+)
 
 class Algorithm(ABC):
     """演算法基礎類別，提供共用功能和介面"""
     
     def __init__(self):
         """初始化基礎類別，設置日誌記錄器"""
-        self.logger = logger
+        self.logger = logger_manager
         
     @abstractmethod
     def visualize(self, *args, **kwargs):

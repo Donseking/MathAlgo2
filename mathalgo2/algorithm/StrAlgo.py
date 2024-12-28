@@ -2,7 +2,7 @@ from typing import List
 from abc import ABC, abstractmethod
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from mathalgo2.logger import setup_logger, logging
+from mathalgo2.Logger import Logger, logging
 from pathlib import Path
 from mathalgo2.algorithm.string.RabinKarp import RabinKarp
 from mathalgo2.algorithm.string.KMP import KMP
@@ -10,14 +10,20 @@ from mathalgo2.algorithm.string.KMP import KMP
 # 設置根目錄和日誌
 ROOT_DIR = Path(__file__).parent.parent.parent
 log_file = ROOT_DIR / "__log__" / "StrAlgo.log"
-logger = setup_logger("StrAlgo", log_file, level=logging.INFO)
+
+# 初始化日誌管理器
+logger_manager = Logger(
+    name="StrAlgo",
+    log_file=str(log_file),
+    level=logging.INFO
+)
 
 class Algorithm(ABC):
     """演算法基礎抽象類別，提供所有字串演算法的共用介面和基本功能。"""
     
     def __init__(self):
         """初始化基礎類別"""
-        self.logger = logger
+        self.logger = logger_manager
         
     @abstractmethod
     def visualize(self, *args, **kwargs):
@@ -42,19 +48,31 @@ class StrAlgo(Algorithm):
         animation (FuncAnimation): matplotlib 動畫對象
     """
     
-    def __init__(self, text: str, pattern: str):
+    def __init__(self, text: str, pattern: str, test_mode: bool = False):
         """
         初始化字串演算法類
         
         Args:
             text: 待處理的文本
             pattern: 待匹配的模式
+            test_mode: 是否為測試模式（不創建圖形界面）
+        Raises:
+            ValueError: 當 pattern 為空字串時
         """
         super().__init__()
+        if not pattern:
+            raise ValueError("Pattern cannot be empty")
+            
         self.text = text
         self.pattern = pattern
-        self.fig, self.ax = plt.subplots()
-        self.animation = None
+        
+        if not test_mode:
+            self.fig, self.ax = plt.subplots()
+            self.animation = None
+        else:
+            self.fig = None
+            self.ax = None
+            self.animation = None
         
         self.logger.info(f"初始化字串演算法類，文本長度: {len(text)}, 模式長度: {len(pattern)}")
         

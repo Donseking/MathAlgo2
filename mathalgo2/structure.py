@@ -1,23 +1,35 @@
 from typing import Any, Optional, List, Union
 from collections import deque
 import logging
-from mathalgo2.logger import setup_logger
+from mathalgo2.Logger import Logger
 import os
 from pathlib import Path
 
-# 獲取當前文件所在目錄的根目錄
+# 設置根目錄和日誌
 ROOT_DIR = Path(__file__).parent.parent
+log_file = ROOT_DIR / "__log__" / "structure.log"
 
-# 設置日誌文件路徑
-log_file = os.path.join(ROOT_DIR, "__log__", "structure.log")
-logger = setup_logger("structure", log_file, level=logging.INFO)
+# 初始化日誌管理器
+logger_manager = Logger(
+    name="Structure",
+    log_file=str(log_file),
+    level=logging.DEBUG
+)
 
 class TreeNode:
-    """樹節點類別"""
+    """
+    樹節點類別
+    
+    屬性:
+        value: 節點儲存的值
+        left: 左子節點
+        right: 右子節點
+    """
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
+        logger_manager.debug(f"創建新節點，值為: {value}")
 
 class Tree:
     """
@@ -29,7 +41,8 @@ class Tree:
     def __init__(self):
         """初始化空樹"""
         self.root = None
-        logger.info("樹結構初始化成功")
+        logger_manager.info("創建新的二元樹實例")
+        logger_manager.debug("根節點初始化為 None")
     
     def insert(self, value):
         """
@@ -40,24 +53,29 @@ class Tree:
         """
         if not self.root:
             self.root = TreeNode(value)
-            logger.info(f"插入根節點: {value}")
+            logger_manager.info(f"插入根節點: {value}")
+            logger_manager.debug("樹的高度現在為 1")
             return
             
         def _insert_recursive(node, value):
+            logger_manager.debug(f"正在遞迴比較節點 {node.value} 與待插入值 {value}")
             if value < node.value:
                 if node.left is None:
                     node.left = TreeNode(value)
-                    logger.info(f"插入左子節點: {value}")
+                    logger_manager.info(f"在節點 {node.value} 的左側插入值 {value}")
                 else:
+                    logger_manager.debug(f"繼續在左子樹尋找插入位置，當前節點值: {node.value}")
                     _insert_recursive(node.left, value)
             else:
                 if node.right is None:
                     node.right = TreeNode(value)
-                    logger.info(f"插入右子節點: {value}")
+                    logger_manager.info(f"在節點 {node.value} 的右側插入值 {value}")
                 else:
+                    logger_manager.debug(f"繼續在右子樹尋找插入位置，當前節點值: {node.value}")
                     _insert_recursive(node.right, value)
                     
         _insert_recursive(self.root, value)
+        logger_manager.debug("完成插入操作")
     
     def search(self, value) -> Optional[TreeNode]:
         """
@@ -71,18 +89,27 @@ class Tree:
         * None: 如果沒找到
         """
         def _search_recursive(node, value):
-            if node is None or node.value == value:
+            if node is None:
+                logger_manager.debug(f"到達空節點，未找到值 {value}")
+                return None
+                
+            logger_manager.debug(f"正在比較節點值 {node.value} 與搜尋值 {value}")
+            if node.value == value:
+                logger_manager.info(f"找到目標值 {value}")
                 return node
             
             if value < node.value:
+                logger_manager.debug(f"在左子樹繼續搜尋 {value}")
                 return _search_recursive(node.left, value)
+            logger_manager.debug(f"在右子樹繼續搜尋 {value}")
             return _search_recursive(node.right, value)
             
+        logger_manager.info(f"開始搜尋值 {value}")
         result = _search_recursive(self.root, value)
         if result:
-            logger.info(f"找到節點: {value}")
+            logger_manager.info(f"成功找到值 {value}")
         else:
-            logger.info(f"未找到節點: {value}")
+            logger_manager.warning(f"未找到值 {value}")
         return result
     
     def delete(self, value):
@@ -121,7 +148,7 @@ class Tree:
             return node
             
         self.root = _delete_recursive(self.root, value)
-        logger.info(f"刪除節點: {value}")
+        logger_manager.info(f"刪除節點: {value}")
     
     def inorder_traversal(self) -> List[Any]:
         """
@@ -139,7 +166,7 @@ class Tree:
                 _inorder(node.right)
                 
         _inorder(self.root)
-        logger.info(f"中序遍歷結果: {result}")
+        logger_manager.info(f"中序遍歷結果: {result}")
         return result
     
     def preorder_traversal(self) -> List[Any]:
@@ -158,7 +185,7 @@ class Tree:
                 _preorder(node.right)
                 
         _preorder(self.root)
-        logger.info(f"前序遍歷結果: {result}")
+        logger_manager.info(f"前序遍歷結果: {result}")
         return result
     
     def postorder_traversal(self) -> List[Any]:
@@ -177,7 +204,7 @@ class Tree:
                 result.append(node.value)
                 
         _postorder(self.root)
-        logger.info(f"後序遍歷結果: {result}")
+        logger_manager.info(f"後序遍歷結果: {result}")
         return result
     
     def is_balanced(self) -> bool:
@@ -205,7 +232,7 @@ class Tree:
             return _is_balanced_recursive(node.left) and _is_balanced_recursive(node.right)
             
         result = _is_balanced_recursive(self.root)
-        logger.info(f"樹平衡檢查結果: {'平衡' if result else '不平衡'}")
+        logger_manager.info(f"樹平衡檢查結果: {'平衡' if result else '不平衡'}")
         return result
     
     def level_order_traversal(self) -> List[List[Any]]:
@@ -236,7 +263,7 @@ class Tree:
                     
             result.append(level)
             
-        logger.info(f"層序遍歷結果: {result}")
+        logger_manager.info(f"層序遍歷結果: {result}")
         return result
     
     def serialize(self) -> str:
@@ -504,7 +531,7 @@ class Queue:
         """
         self._queue = deque()
         self.max_size = max_size
-        logger.info("佇列初始化成功")
+        logger_manager.info("佇列初始化成功")
 
     def enqueue(self, item: Any) -> None:
         """
@@ -517,10 +544,10 @@ class Queue:
         * OverflowError: 當佇列已滿時
         """
         if self.is_full():
-            logger.error("佇列已滿")
+            logger_manager.error("佇列已滿")
             raise OverflowError("Queue is full")
         self._queue.append(item)
-        logger.info(f"元素 {item} 加入佇列")
+        logger_manager.info(f"元素 {item} 加入佇列")
 
     def dequeue(self) -> Any:
         """
@@ -533,10 +560,10 @@ class Queue:
         * IndexError: 當佇列為空時
         """
         if self.is_empty():
-            logger.error("佇列為空")
+            logger_manager.error("佇列為空")
             raise IndexError("Queue is empty")
         item = self._queue.popleft()
-        logger.info(f"元素 {item} 從佇列移除")
+        logger_manager.info(f"元素 {item} 從佇列移除")
         return item
 
     def peek(self) -> Any:
@@ -550,7 +577,7 @@ class Queue:
         * IndexError: 當佇列為空時
         """
         if self.is_empty():
-            logger.error("佇列為空")
+            logger_manager.error("佇列為空")
             raise IndexError("Queue is empty")
         return self._queue[0]
 
@@ -619,7 +646,7 @@ class Queue:
         - 狀態資訊
         """
         self.visualize(show_details=True)
-        logger.info("\n" + self.visualize(show_details=True))
+        logger_manager.info("\n" + self.visualize(show_details=True))
 
 class LinkedListNode:
     """鏈結串列節點"""
@@ -636,7 +663,7 @@ class LinkedList:
     def __init__(self):
         """初始化空鏈結串列"""
         self.head = None
-        logger.info("鏈結串列初始化成功")
+        logger_manager.info("鏈結串列初始化成功")
 
     def append(self, data: Any) -> None:
         """
@@ -647,14 +674,14 @@ class LinkedList:
         """
         if not self.head:
             self.head = LinkedListNode(data)
-            logger.info(f"添加首個節點: {data}")
+            logger_manager.info(f"添加首個節點: {data}")
             return
 
         current = self.head
         while current.next:
             current = current.next
         current.next = LinkedListNode(data)
-        logger.info(f"添加節點到尾部: {data}")
+        logger_manager.info(f"添加節點到尾部: {data}")
 
     def delete(self, data: Any) -> bool:
         """
@@ -667,23 +694,23 @@ class LinkedList:
         * bool: 是否成功刪除
         """
         if not self.head:
-            logger.info("鏈結串列為空，無法刪除")
+            logger_manager.info("鏈結串列為空，無法刪除")
             return False
 
         if self.head.data == data:
             self.head = self.head.next
-            logger.info(f"刪除首個節點: {data}")
+            logger_manager.info(f"刪除首個節點: {data}")
             return True
 
         current = self.head
         while current.next:
             if current.next.data == data:
                 current.next = current.next.next
-                logger.info(f"刪除節點: {data}")
+                logger_manager.info(f"刪除節點: {data}")
                 return True
             current = current.next
 
-        logger.info(f"未找到要刪除的節點: {data}")
+        logger_manager.info(f"未找到要刪除的節點: {data}")
         return False
 
     def search(self, data: Any) -> Optional[LinkedListNode]:
@@ -700,10 +727,10 @@ class LinkedList:
         current = self.head
         while current:
             if current.data == data:
-                logger.info(f"找到節點: {data}")
+                logger_manager.info(f"找到節點: {data}")
                 return current
             current = current.next
-        logger.info(f"未找到節點: {data}")
+        logger_manager.info(f"未找到節點: {data}")
         return None
 
     def display(self) -> List[Any]:
@@ -718,7 +745,7 @@ class LinkedList:
         while current:
             elements.append(current.data)
             current = current.next
-        logger.info(f"鏈結串列內容: {elements}")
+        logger_manager.info(f"鏈結串列內容: {elements}")
         return elements
 
 class Graph:
@@ -735,7 +762,7 @@ class Graph:
     def __init__(self):
         """初始化空圖"""
         self.graph = {}
-        logger.info("圖結構初始化成功")
+        logger_manager.info("圖結構初始化成功")
         
     def add_vertex(self, vertex: Any) -> None:
         """
@@ -746,7 +773,7 @@ class Graph:
         """
         if vertex not in self.graph:
             self.graph[vertex] = []
-            logger.info(f"新增節點: {vertex}")
+            logger_manager.info(f"新增節點: {vertex}")
             
     def add_edge(self, vertex1: Any, vertex2: Any) -> None:
         """
@@ -763,7 +790,7 @@ class Graph:
             
         if vertex2 not in self.graph[vertex1]:
             self.graph[vertex1].append(vertex2)
-            logger.info(f"新增邊: {vertex1} -> {vertex2}")
+            logger_manager.info(f"新增邊: {vertex1} -> {vertex2}")
             
     def remove_vertex(self, vertex: Any) -> None:
         """
@@ -777,7 +804,7 @@ class Graph:
             for v in self.graph:
                 if vertex in self.graph[v]:
                     self.graph[v].remove(vertex)
-            logger.info(f"刪除節點: {vertex}")
+            logger_manager.info(f"刪除節點: {vertex}")
             
     def remove_edge(self, vertex1: Any, vertex2: Any) -> None:
         """
@@ -789,7 +816,7 @@ class Graph:
         """
         if vertex1 in self.graph and vertex2 in self.graph[vertex1]:
             self.graph[vertex1].remove(vertex2)
-            logger.info(f"刪除邊: {vertex1} -> {vertex2}")
+            logger_manager.info(f"刪除邊: {vertex1} -> {vertex2}")
     
     def visualize(self) -> None:
         """
@@ -800,15 +827,15 @@ class Graph:
         Raises:
             ImportError: 未安裝 networkx 或 matplotlib 套件
         """
-        logger.info("開始視覺化圖結構")
+        logger_manager.info("開始視覺化圖結構")
         
         try:
             import networkx as nx
             import matplotlib.pyplot as plt
-            logger.debug("成功導入 networkx 和 matplotlib 模組")
+            logger_manager.debug("成功導入 networkx 和 matplotlib 模組")
         except ImportError as e:
             error_msg = "需要安裝 networkx 和 matplotlib 套件才能使用視覺化功能"
-            logger.error(f"{error_msg}: {str(e)}")
+            logger_manager.error(f"{error_msg}: {str(e)}")
             raise ImportError(error_msg) from e
 
         # 建立 NetworkX 圖物件
@@ -836,7 +863,7 @@ class Graph:
         plt.title("Graph Visualization")
         plt.axis('off')
         
-        logger.debug("完成圖結構視覺化")
+        logger_manager.debug("完成圖結構視覺化")
         plt.show()
 
 __all__ = [

@@ -2,17 +2,21 @@ from typing import Union, Optional, List, Tuple
 import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
-from mathalgo2.logger import setup_logger, logging
+from mathalgo2.Logger import Logger, logging
 import os
 from pathlib import Path
 from mathalgo2.MathUtiles import MathUtils as mu
 
-# 獲取當前文件所在目錄的根目錄
+# 設置根目錄和日誌
 ROOT_DIR = Path(__file__).parent.parent
+log_file = ROOT_DIR / "__log__" / "math.log"
 
-# 設置日誌文件路徑
-log_file = os.path.join(ROOT_DIR, "__log__", "math.log")
-logger = setup_logger("Math_mode", log_file, level=logging.INFO)
+# 初始化日誌管理器
+logger_manager = Logger(
+    name="Math_mode",
+    log_file=str(log_file),
+    level=logging.INFO
+)
 
 # 定義符號變量
 x = sp.Symbol("x")
@@ -38,11 +42,12 @@ class Calculus:
         ## 參數
         - `func_expr`: 字串或 sympy 表達式形式的函數
         """
+        self.logger = logger_manager
         try:
             self.func_expr = sp.sympify(func_expr) if isinstance(func_expr, str) else func_expr
-            logger.info(f"函數表達式 f(x) = {self.func_expr} 初始化成功")
+            self.logger.info(f"函數表達式 f(x) = {self.func_expr} 初始化成功")
         except Exception as e:
-            logger.error(f"函數表達式初始化失敗: {str(e)}")
+            self.logger.error(f"函數表達式初始化失敗: {str(e)}")
             raise ValueError("無效的函數表達式")
 
     def __repr__(self) -> str:
@@ -61,10 +66,10 @@ class Calculus:
         """
         try:
             result = sp.diff(self.func_expr, x, order)
-            logger.info(f"{order} 階導數計算成功: {result}")
+            self.logger.info(f"{order} 階導數計算成功: {result}")
             return Calculus(result)
         except Exception as e:
-            logger.error(f"導數計算失敗: {str(e)}")
+            self.logger.error(f"導數計算失敗: {str(e)}")
             raise ValueError("導數計算錯誤")
 
     def evaluate(self, x_value: float) -> float:
@@ -79,10 +84,10 @@ class Calculus:
         """
         try:
             result = float(self.func_expr.subs(x, x_value))
-            logger.info(f"函數在 x = {x_value} 處的值為 {result}")
+            self.logger.info(f"函數在 x = {x_value} 處的值為 {result}")
             return result
         except Exception as e:
-            logger.error(f"函數值計算失敗: {str(e)}")
+            self.logger.error(f"函數值計算失敗: {str(e)}")
             raise ValueError("函數值計算錯誤")
 
     def indefinite_integral(self) -> 'Calculus':
@@ -94,10 +99,10 @@ class Calculus:
         """
         try:
             result = sp.integrate(self.func_expr, x)
-            logger.info(f"不定積分計算成功: {result}")
+            self.logger.info(f"不定積分計算成功: {result}")
             return Calculus(result)
         except Exception as e:
-            logger.error(f"不定積分計算失敗: {str(e)}")
+            self.logger.error(f"不定積分計算失敗: {str(e)}")
             raise ValueError("不定積分計算錯誤")
 
     def definite_integral(self, lower: float, upper: float) -> float:
@@ -113,10 +118,10 @@ class Calculus:
         """
         try:
             result = float(sp.integrate(self.func_expr, (x, lower, upper)))
-            logger.info(f"定積分從 {lower} 到 {upper} 的值為 {result}")
+            self.logger.info(f"定積分從 {lower} 到 {upper} 的值為 {result}")
             return result
         except Exception as e:
-            logger.error(f"定積分計算失敗: {str(e)}")
+            self.logger.error(f"定積分計算失敗: {str(e)}")
             raise ValueError("定積分計算錯誤")
 
     def limit(self, point: float, direction: Optional[str] = None) -> float:
@@ -137,10 +142,10 @@ class Calculus:
                 result = float(sp.limit(self.func_expr, x, point, dir='+'))
             else:
                 result = float(sp.limit(self.func_expr, x, point))
-            logger.info(f"極限計算在 x -> {point} ({direction if direction else 'both'}) 的值為 {result}")
+            self.logger.info(f"極限計算在 x -> {point} ({direction if direction else 'both'}) 的值為 {result}")
             return result
         except Exception as e:
-            logger.error(f"極限計算失敗: {str(e)}")
+            self.logger.error(f"極限計算失敗: {str(e)}")
             raise ValueError("極限計算錯誤")
 
     def taylor_series(self, point: float, order: int) -> 'Calculus':
@@ -156,10 +161,10 @@ class Calculus:
         """
         try:
             result = sp.series(self.func_expr, x, point, order).removeO()
-            logger.info(f"在 x = {point} 處的 {order} 階泰勒展開成功")
+            self.logger.info(f"在 x = {point} 處的 {order} 階泰勒展開成功")
             return Calculus(result)
         except Exception as e:
-            logger.error(f"泰勒展開失敗: {str(e)}")
+            self.logger.error(f"泰勒展開失敗: {str(e)}")
             raise ValueError("泰勒展開錯誤")
 
     def plot(self, start: float = -10, end: float = 10, points: int = 1000) -> None:
@@ -184,9 +189,9 @@ class Calculus:
             plt.legend()
             plt.show()
             
-            logger.info("函數圖形繪製成功")
+            self.logger.info("函數圖形繪製成功")
         except Exception as e:
-            logger.error(f"函數圖形繪製失敗: {str(e)}")
+            self.logger.error(f"函數圖形繪製失敗: {str(e)}")
             raise ValueError("函數圖形繪製錯誤")
 
     def find_critical_points(self) -> List[float]:
@@ -200,10 +205,10 @@ class Calculus:
             derivative = self.derivative()
             critical_points = sp.solve(derivative.func_expr, x)
             critical_points = [float(point.evalf()) for point in critical_points if point.is_real]
-            logger.info(f"找到的臨界點: {critical_points}")
+            self.logger.info(f"找到的臨界點: {critical_points}")
             return critical_points
         except Exception as e:
-            logger.error(f"臨界點計算失敗: {str(e)}")
+            self.logger.error(f"臨界點計算失敗: {str(e)}")
             raise ValueError("臨界點計算錯誤")
 
 class Matrix:
@@ -221,10 +226,11 @@ class Matrix:
         ## 異常
         - ValueError: 當輸入的矩陣格式不正確時
         """
+        self.logger = logger_manager
         try:
             if isinstance(data, str):
                 converted_data = mu.convert_to_matrix(data)
-                logger.info(f"矩陣初始化成功，維度為 {converted_data.shape[0]}x{converted_data.shape[1]}")
+                self.logger.info(f"矩陣初始化成功，維度為 {converted_data.shape[0]}x{converted_data.shape[1]}")
             else:
                 # 檢查資料維度
                 if isinstance(data, list):
@@ -245,9 +251,9 @@ class Matrix:
             self.data = converted_data
             self.rows = self.data.shape[0] 
             self.cols = self.data.shape[1]
-            logger.info(f"矩陣初始化成功，維度為 {self.rows}x{self.cols}")
+            self.logger.info(f"矩陣初始化成功，維度為 {self.rows}x{self.cols}")
         except Exception as e:
-            logger.error(f"矩陣初始化失敗: {str(e)}")
+            self.logger.error(f"矩陣初始化失敗: {str(e)}")
             raise ValueError(f"無效的矩陣格式: {str(e)}")
         
     
@@ -263,7 +269,7 @@ class Matrix:
         - ValueError: 當矩陣維度不一致時拋出
         """
         if self.rows != other.rows or self.cols != other.cols:
-            logger.error(f"矩陣{operation}失敗: 維度不一致")
+            self.logger.error(f"矩陣{operation}失敗: 維度不一致")
             raise ValueError(f"矩陣的維度必須相同才能進行{operation}運算。")
 
     def __repr__(self, formatted: bool = True) -> str:
@@ -292,7 +298,7 @@ class Matrix:
             [self.data[i][j] + other.data[i][j] for j in range(self.cols)]
             for i in range(self.rows)
         ]
-        logger.info("矩陣加法成功")
+        self.logger.info("矩陣加法成功")
         return Matrix(result)
 
     def subtract(self, other: 'Matrix') -> 'Matrix':
@@ -306,7 +312,7 @@ class Matrix:
             [self.data[i][j] - other.data[i][j] for j in range(self.cols)]
             for i in range(self.rows)
         ]
-        logger.info("矩陣減法成功")
+        self.logger.info("矩陣減法成功")
         return Matrix(result)
 
     def multiply(self, other: 'Matrix') -> 'Matrix':
@@ -323,7 +329,7 @@ class Matrix:
             ]
             for i in range(self.rows)
         ]
-        logger.info("矩陣乘法成功 : {result}")
+        self.logger.info("矩陣乘法成功 : {result}")
         return Matrix(result)
 
     def transpose(self) -> 'Matrix':
@@ -332,7 +338,7 @@ class Matrix:
         :return: 轉置後的矩陣
         """
         result = [[self.data[j][i] for j in range(self.rows)] for i in range(self.cols)]
-        logger.info("矩陣轉置成功")
+        self.logger.info("矩陣轉置成功")
         return Matrix(result)
 
     def determinant(self) -> float:
@@ -341,7 +347,7 @@ class Matrix:
         :return: 行列式的值
         """
         if not self.is_square():
-            logger.error("行列式計算失敗: 非方陣")
+            self.logger.error("行列式計算失敗: 非方陣")
             raise ValueError("只有方陣才能計算行列式。")
 
         def _det_recursive(matrix: List[List[float]]) -> float:
@@ -356,7 +362,7 @@ class Matrix:
             return det
 
         determinant_value = _det_recursive(self.data)
-        logger.info(f"行列式計算成功: {determinant_value}")
+        self.logger.info(f"行列式計算成功: {determinant_value}")
         return determinant_value
 
     def inverse(self) -> 'Matrix':
@@ -365,10 +371,10 @@ class Matrix:
         :return: 逆矩陣
         """
         if not self.is_square():
-            logger.error("逆矩陣計算失敗: 非方陣")
+            self.logger.error("逆矩陣計算失敗: 非方陣")
             raise ValueError("只有方陣才能計算逆矩陣。")
         if self.determinant() == 0:
-            logger.error("逆矩陣計算失敗: 奇異矩陣")
+            self.logger.error("逆矩陣計算失敗: 奇異矩陣")
             raise ValueError("此矩陣是奇異矩陣，無法求逆。")
         
         # 計算逆矩陣（省略詳盡實現）
@@ -422,7 +428,7 @@ class Matrix:
         # [3 4]
         ```
         """
-        logger.info(f"顯示矩陣，維度為 {self.rows}x{self.cols}")
+        self.logger.info(f"顯示矩陣，維度為 {self.rows}x{self.cols}")
         print(self.__repr__())
     
     def __size__(self):
@@ -432,7 +438,7 @@ class Matrix:
         ## 返回
         - 矩陣的維度
         """
-        logger.info(f"獲取矩陣維度: {self.rows}x{self.cols}")
+        self.logger.info(f"獲取矩陣維度: {self.rows}x{self.cols}")
         return self.rows, self.cols
     
     def __len__(self):
@@ -443,7 +449,7 @@ class Matrix:
         - 矩陣的元素數量
         """
         elements = self.rows * self.cols
-        logger.info(f"獲取矩陣元素數量: {elements}")
+        self.logger.info(f"獲取矩陣元素數量: {elements}")
         return elements
     
     def __getitem__(self, index: int) -> List[float]:
@@ -458,10 +464,10 @@ class Matrix:
         """
         try:
             row = self.data[index]
-            logger.info(f"獲取矩陣第 {index} 行: {row}")
+            self.logger.info(f"獲取矩陣第 {index} 行: {row}")
             return row
         except IndexError as e:
-            logger.error(f"獲取矩陣行失敗: 索引 {index} 超出範圍")
+            self.logger.error(f"獲取矩陣行失敗: 索引 {index} 超出範圍")
             raise IndexError(f"索引 {index} 超出矩陣範圍")
     
     def __setitem__(self, index: int, value: List[float]) -> None:
@@ -474,12 +480,12 @@ class Matrix:
         """
         try:
             if len(value) != self.cols:
-                logger.error(f"設定矩陣行失敗: 新行的長度 {len(value)} 與矩陣列數 {self.cols} 不符")
+                self.logger.error(f"設定矩陣行失敗: 新行的長度 {len(value)} 與矩陣列數 {self.cols} 不符")
                 raise ValueError(f"新行的長度必須為 {self.cols}")
             self.data[index] = value
-            logger.info(f"設定矩陣第 {index} 行為: {value}")
+            self.logger.info(f"設定矩陣第 {index} 行為: {value}")
         except IndexError as e:
-            logger.error(f"設定矩陣行失敗: 索引 {index} 超出範圍")
+            self.logger.error(f"設定矩陣行失敗: 索引 {index} 超出範圍")
             raise IndexError(f"索引 {index} 超出矩陣範圍")
     
     def __iter__(self):
@@ -489,7 +495,7 @@ class Matrix:
         ## 返回
         - 矩陣的迭代器
         """
-        logger.info("開始矩陣迭代")
+        self.logger.info("開始矩陣迭代")
         return iter(self.data)
     
     def __contains__(self, item: float) -> bool:
@@ -503,7 +509,7 @@ class Matrix:
         - 是否包含該元素
         """
         result = item in self.data
-        logger.info(f"檢查元素 {item} 是否在矩陣中: {'是' if result else '否'}")
+        self.logger.info(f"檢查元素 {item} 是否在矩陣中: {'是' if result else '否'}")
         return result
     
     def __eq__(self, other: 'Matrix') -> bool:
@@ -511,7 +517,7 @@ class Matrix:
         # 檢查兩個矩陣是否相等
         """
         result = self.data == other.data
-        logger.info(f"比較兩個矩陣是否相等: {'是' if result else '否'}")
+        self.logger.info(f"比較兩個矩陣是否相等: {'是' if result else '否'}")
         return result
     
     def to_list(self) -> List[float]:
@@ -523,10 +529,10 @@ class Matrix:
         """
         try:
             flattened = self.data.flatten().tolist()
-            logger.info(f"矩陣成功轉換為一維列表，長度為 {len(flattened)}")
+            self.logger.info(f"矩陣成功轉換為一維列表，長度為 {len(flattened)}")
             return flattened
         except Exception as e:
-            logger.error(f"矩陣轉換失敗: {str(e)}")
+            self.logger.error(f"矩陣轉換失敗: {str(e)}")
             raise ValueError("矩陣轉換錯誤")
 
 class Vector_space:
@@ -543,12 +549,13 @@ class Vector_space:
         ## 參數
         - `vector`: 以一維列表表示的向量
         """
+        self.logger = logger_manager
         if vector is not None and not isinstance(vector, list):
-            logger.error("向量初始化失敗: 資料類型錯誤")
+            self.logger.error("向量初始化失敗: 資料類型錯誤")
             raise ValueError("向量必須是一維列表。")
         self.vector = vector if vector else []
         self.dimension = len(self.vector)
-        logger.info("向量初始化成功")
+        self.logger.info("向量初始化成功")
 
     def dot_product(self, other: 'Vector_space') -> float:
         """
@@ -561,11 +568,11 @@ class Vector_space:
         - 內積計算結果
         """
         if self.dimension != other.dimension:
-            logger.error("內積計算失敗: 向量維度不一致")
+            self.logger.error("內積計算失敗: 向量維度不一致")
             raise ValueError("向量維度必須相同。")
         
         result = sum(a * b for a, b in zip(self.vector, other.vector))
-        logger.info(f"內積計算成功: {result}")
+        self.logger.info(f"內積計算成功: {result}")
         return result
 
     def cross_product(self, other: 'Vector_space') -> 'Vector_space':
@@ -582,7 +589,7 @@ class Vector_space:
         - 僅適用於三維向量
         """
         if self.dimension != 3 or other.dimension != 3:
-            logger.error("外積計算失敗: 向量維度必須為3")
+            self.logger.error("外積計算失敗: 向量維度必須為3")
             raise ValueError("外積只能在三維向量間計算。")
 
         result = [
@@ -590,7 +597,7 @@ class Vector_space:
             self.vector[2] * other.vector[0] - self.vector[0] * other.vector[2],
             self.vector[0] * other.vector[1] - self.vector[1] * other.vector[0]
         ]
-        logger.info("外積計算成功")
+        self.logger.info("外積計算成功")
         return Vector_space(result)
 
     def norm(self) -> float:
@@ -599,7 +606,7 @@ class Vector_space:
         :return: 向量範數
         """
         result = np.sqrt(sum(x * x for x in self.vector))
-        logger.info(f"範數計算成功: {result}")
+        self.logger.info(f"範數計算成功: {result}")
         return result
 
     def normalize(self) -> 'Vector_space':
@@ -609,11 +616,11 @@ class Vector_space:
         """
         norm = self.norm()
         if norm == 0:
-            logger.error("正規化失敗: 零向量")
+            self.logger.error("正規化失敗: 零向量")
             raise ValueError("零向量無法正規化。")
         
         result = [x / norm for x in self.vector]
-        logger.info("向量正規化成功")
+        self.logger.info("向量正規化成功")
         return Vector_space(result)
 
     def angle_between(self, other: 'Vector_space') -> float:
@@ -626,14 +633,14 @@ class Vector_space:
         norms = self.norm() * other.norm()
         
         if norms == 0:
-            logger.error("夾角計算失敗: 存在零向量")
+            self.logger.error("夾角計算失敗: 存在零向量")
             raise ValueError("零向量無法計算夾角。")
         
         cos_theta = dot_prod / norms
         # 處理數值誤差
         cos_theta = min(1.0, max(-1.0, cos_theta))
         angle = np.arccos(cos_theta)
-        logger.info(f"夾角計算成功: {angle} 弧度")
+        self.logger.info(f"夾角計算成功: {angle} 弧度")
         return angle
 
     def projection(self, other: 'Vector_space') -> 'Vector_space':
@@ -643,12 +650,12 @@ class Vector_space:
         :return: 投影向量
         """
         if other.norm() == 0:
-            logger.error("投影計算失敗: 基底為零向量")
+            self.logger.error("投影計算失敗: 基底為零向量")
             raise ValueError("無法投影到零向量上。")
         
         scalar = self.dot_product(other) / (other.norm() ** 2)
         result = [scalar * x for x in other.vector]
-        logger.info("投影計算成功")
+        self.logger.info("投影計算成功")
         return Vector_space(result)
 
     def is_orthogonal(self, other: 'Vector_space') -> bool:
