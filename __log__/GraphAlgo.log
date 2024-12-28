@@ -1,0 +1,12 @@
+2024-12-29 01:45:24,438 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
+2024-12-29 01:51:36,824 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
+2024-12-29 01:52:33,282 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
+2024-12-29 01:52:33,282 - GraphAlgo - INFO - 開始Dijkstra算法，起始節點: 合宜路
+2024-12-29 01:52:33,282 - GraphAlgo - INFO - Dijkstra算法完成
+2024-12-29 01:53:50,657 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
+2024-12-29 01:53:50,657 - GraphAlgo - INFO - 開始Dijkstra算法，起始節點: 合宜路
+2024-12-29 01:53:50,657 - GraphAlgo - INFO - Dijkstra算法完成
+2024-12-29 01:55:28,578 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
+2024-12-29 01:55:28,578 - GraphAlgo - INFO - 開始視覺化 dijkstra 搜尋
+2024-12-29 01:55:30,261 - GraphAlgo - INFO - 開始Dijkstra算法，起始節點: 合宜路
+2024-12-29 01:55:32,632 - GraphAlgo - INFO - Dijkstra算法完成

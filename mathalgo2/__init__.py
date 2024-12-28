@@ -106,10 +106,10 @@ from mathalgo2.Structure import *
 
 __all__ = [
     "GraphAlgo",
-    "SearchAlgo",
-    "SortAlgo",
+    "Searching",
+    "Sorting",
     "StrAlgo",
-    "OpAlgo",
+    "Optimization",
     "CodeBase",
     "ClassicalCipher",
     "FileUtils",
@@ -118,10 +118,12 @@ __all__ = [
     "Matrix",
     "Vector_space",
     "MathUtils",
-    "Structure",
+    "Tree",
+    "TreeNode",
     "Stack",
     "Queue",
     "LinkedList",
+    "LinkedListNode",
     "Graph"
 ]
 

@@ -840,10 +840,12 @@ class Graph:
         plt.show()
 
 __all__ = [
-    "Structure",
+    "Tree",
+    "TreeNode",
     "Stack",
     "Queue",
     "LinkedList",
+    "LinkedListNode",
     "Graph"
 ]
 
