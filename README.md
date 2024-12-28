@@ -52,7 +52,7 @@ python setup.py install
 ### 基礎功能
 ```python
 from mathalgo2.sort import quick_sort
-from mathalgo2.crypto import morse_code
+from mathalgo2.Code import morse_code
 
 # 排序範例
 arr = [64, 34, 25, 12, 22, 11, 90]
@@ -87,10 +87,9 @@ area = integral('x^2', 0, 1)
 
 ## 版本資訊
 - v0.3.0
-  - 首次發布
   - 實現基礎演算法
-  - 加入數學計算功能
-  - 整合密碼學工具
+  - 數學計算功能
+  - 整合基礎密碼學工具
 
 ## 作者
 - Donseking - [GitHub](https://github.com/Donseking)
