@@ -2,9 +2,10 @@ from typing import Union, Optional, List, Tuple
 import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
-from logger import setup_logger, logging
+from mathalgo2.logger import setup_logger, logging
 import os
 from pathlib import Path
+from mathalgo2.MathUtiles import MathUtils as mu
 
 # 獲取當前文件所在目錄的根目錄
 ROOT_DIR = Path(__file__).parent.parent
@@ -210,29 +211,75 @@ class Matrix:
     矩陣相關功能的核心類
     """
 
-    def __init__(self, data: List[List[float]]):
+    def __init__(self, data):
         """
-        初始化矩陣
-        :param data: 二維列表表示的矩陣
+        # 初始化矩陣
+        
+        ## 參數
+        - `data`: 二維列表表示的矩陣或其他可轉換為矩陣的格式
+        
+        ## 異常
+        - ValueError: 當輸入的矩陣格式不正確時
         """
-        if not data or not all(len(row) == len(data[0]) for row in data):
-            logger.error("矩陣初始化失敗: 資料無效")
-            raise ValueError("所有列必須具有相同的長度且資料不可為空。")
-        self.data = data
-        self.rows = len(data)
-        self.cols = len(data[0])
-        logger.info("矩陣初始化成功")
+        try:
+            if isinstance(data, str):
+                converted_data = mu.convert_to_matrix(data)
+                logger.info(f"矩陣初始化成功，維度為 {converted_data.shape[0]}x{converted_data.shape[1]}")
+            else:
+                # 檢查資料維度
+                if isinstance(data, list):
+                    if not data or not isinstance(data[0], list):
+                        raise ValueError("輸入必須是二維列表")
+                    rows = len(data)
+                    cols = len(data[0])
+                    if not all(len(row) == cols for row in data):
+                        raise ValueError("所有行的長度必須相同")
+                    converted_data = np.array(data)
+                elif isinstance(data, np.ndarray):
+                    if data.ndim != 2:
+                        raise ValueError("NumPy 陣列必須是二維的")
+                    converted_data = data
+                else:
+                    raise ValueError("輸入必須是字串、列表或 NumPy 陣列")
+            
+            self.data = converted_data
+            self.rows = self.data.shape[0] 
+            self.cols = self.data.shape[1]
+            logger.info(f"矩陣初始化成功，維度為 {self.rows}x{self.cols}")
+        except Exception as e:
+            logger.error(f"矩陣初始化失敗: {str(e)}")
+            raise ValueError(f"無效的矩陣格式: {str(e)}")
+        
     
     def _check_dimensions(self, other: 'Matrix', operation: str):
+        """
+        # 檢查矩陣維度是否相同
+        
+        ## 參數
+        - `other`: 另一個要比較的矩陣
+        - `operation`: 要執行的運算名稱
+        
+        ## 異常
+        - ValueError: 當矩陣維度不一致時拋出
+        """
         if self.rows != other.rows or self.cols != other.cols:
             logger.error(f"矩陣{operation}失敗: 維度不一致")
             raise ValueError(f"矩陣的維度必須相同才能進行{operation}運算。")
 
-    def __repr__(self) -> str:
+    def __repr__(self, formatted: bool = True) -> str:
         """
         矩陣的字串表示
+        
+        Args:
+            formatted: 是否格式化輸出，默認為True
+            
+        Returns:
+            str: 矩陣的字串表示
         """
-        return "\n".join([str(row) for row in self.data])
+        if formatted:
+            return self.format_matrix()
+        else:
+            return "\n".join([str(row) for row in self.data])
 
     def add(self, other: 'Matrix') -> 'Matrix':
         """
@@ -333,6 +380,154 @@ class Matrix:
         :return: 是否為方陣
         """
         return self.rows == self.cols
+
+    def format_matrix(self):
+        """
+        # 格式化矩陣輸出
+        
+        將矩陣格式化為對齊的字串表示。
+        
+        ## 返回
+        - 格式化後的矩陣字串，每個數字右對齊，並用方括號包圍
+        
+        ## 範例
+        ```python
+        matrix = Matrix([[1, 22, 333], [4444, 55555, 666666]])
+        print(matrix.format_matrix())
+        # [   1    22    333]
+        # [4444 55555 666666]
+        ```
+        """
+        # 找出最長數字的寬度
+        width = max(len(str(num)) for row in self.data for num in row)
+        # 使用格式化字符串對齊
+        formatted_rows = []
+        for row in self.data:
+            formatted_row = [f"{num:>{width}}" for num in row]
+            formatted_rows.append("[" + " ".join(formatted_row) + "]")
+        return "\n".join(formatted_rows)
+    
+    def show(self):
+        """
+        # 顯示矩陣
+        
+        將矩陣以格式化的方式輸出到控制台。
+        使用 __repr__() 方法的格式化輸出。
+        
+        ## 範例
+        ```python
+        matrix = Matrix([[1, 2], [3, 4]])
+        matrix.show()
+        # [1 2]
+        # [3 4]
+        ```
+        """
+        logger.info(f"顯示矩陣，維度為 {self.rows}x{self.cols}")
+        print(self.__repr__())
+    
+    def __size__(self):
+        """
+        # 返回矩陣的維度
+        
+        ## 返回
+        - 矩陣的維度
+        """
+        logger.info(f"獲取矩陣維度: {self.rows}x{self.cols}")
+        return self.rows, self.cols
+    
+    def __len__(self):
+        """
+        # 返回矩陣的元素數量
+        
+        ## 返回
+        - 矩陣的元素數量
+        """
+        elements = self.rows * self.cols
+        logger.info(f"獲取矩陣元素數量: {elements}")
+        return elements
+    
+    def __getitem__(self, index: int) -> List[float]:
+        """
+        # 返回矩陣的第 index 行
+        
+        ## 參數
+        - `index`: 要返回的行數
+        
+        ## 返回
+        - 矩陣的第 index 行
+        """
+        try:
+            row = self.data[index]
+            logger.info(f"獲取矩陣第 {index} 行: {row}")
+            return row
+        except IndexError as e:
+            logger.error(f"獲取矩陣行失敗: 索引 {index} 超出範圍")
+            raise IndexError(f"索引 {index} 超出矩陣範圍")
+    
+    def __setitem__(self, index: int, value: List[float]) -> None:
+        """
+        # 設定矩陣的第 index 行
+        
+        ## 參數
+        - `index`: 要設定的行數
+        - `value`: 要設定的行
+        """
+        try:
+            if len(value) != self.cols:
+                logger.error(f"設定矩陣行失敗: 新行的長度 {len(value)} 與矩陣列數 {self.cols} 不符")
+                raise ValueError(f"新行的長度必須為 {self.cols}")
+            self.data[index] = value
+            logger.info(f"設定矩陣第 {index} 行為: {value}")
+        except IndexError as e:
+            logger.error(f"設定矩陣行失敗: 索引 {index} 超出範圍")
+            raise IndexError(f"索引 {index} 超出矩陣範圍")
+    
+    def __iter__(self):
+        """
+        # 返回矩陣的迭代器
+        
+        ## 返回
+        - 矩陣的迭代器
+        """
+        logger.info("開始矩陣迭代")
+        return iter(self.data)
+    
+    def __contains__(self, item: float) -> bool:
+        """
+        # 檢查矩陣是否包含某個元素
+        
+        ## 參數
+        - `item`: 要檢查的元素
+        
+        ## 返回
+        - 是否包含該元素
+        """
+        result = item in self.data
+        logger.info(f"檢查元素 {item} 是否在矩陣中: {'是' if result else '否'}")
+        return result
+    
+    def __eq__(self, other: 'Matrix') -> bool:
+        """
+        # 檢查兩個矩陣是否相等
+        """
+        result = self.data == other.data
+        logger.info(f"比較兩個矩陣是否相等: {'是' if result else '否'}")
+        return result
+    
+    def to_list(self) -> List[float]:
+        """
+        # 將矩陣轉換為一維列表
+        
+        ## 返回
+        - 包含矩陣所有元素的一維列表
+        """
+        try:
+            flattened = self.data.flatten().tolist()
+            logger.info(f"矩陣成功轉換為一維列表，長度為 {len(flattened)}")
+            return flattened
+        except Exception as e:
+            logger.error(f"矩陣轉換失敗: {str(e)}")
+            raise ValueError("矩陣轉換錯誤")
 
 class Vector_space:
     """
@@ -463,3 +658,10 @@ class Vector_space:
         :return: 是否正交
         """
         return abs(self.dot_product(other)) < 1e-10
+
+__all__ = [
+    "Calculus",
+    "Matrix",
+    "Vector_space"
+]
+

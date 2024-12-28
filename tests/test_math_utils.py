@@ -1,5 +1,5 @@
 import pytest
-from mathalgo2.math_utiles import MathUtils
+from mathalgo2.MathUtiles import MathUtils
 
 class TestMathUtils:
     def test_precedence(self):

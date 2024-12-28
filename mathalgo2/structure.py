@@ -2,8 +2,15 @@ from typing import Any, Optional, List, Union
 from collections import deque
 import logging
 from mathalgo2.logger import setup_logger
+import os
+from pathlib import Path
 
-logger = setup_logger("Structure_mode", "mathalgo/__log__/structure.log", level=logging.INFO)
+# 獲取當前文件所在目錄的根目錄
+ROOT_DIR = Path(__file__).parent.parent
+
+# 設置日誌文件路徑
+log_file = os.path.join(ROOT_DIR, "__log__", "structure.log")
+logger = setup_logger("structure", log_file, level=logging.INFO)
 
 class TreeNode:
     """樹節點類別"""
@@ -713,3 +720,130 @@ class LinkedList:
             current = current.next
         logger.info(f"鏈結串列內容: {elements}")
         return elements
+
+class Graph:
+    """
+    # 圖類別
+    
+    實現基本的圖操作，包含新增節點、新增邊、刪除節點、刪除邊等功能。
+    使用相鄰列表(adjacency list)表示法儲存圖結構。
+    
+    ## 屬性
+    * `graph`: 儲存圖的相鄰列表字典，鍵為節點，值為相鄰節點列表
+    """
+    
+    def __init__(self):
+        """初始化空圖"""
+        self.graph = {}
+        logger.info("圖結構初始化成功")
+        
+    def add_vertex(self, vertex: Any) -> None:
+        """
+        # 新增節點
+        
+        ## 參數
+        * `vertex`: 要新增的節點值
+        """
+        if vertex not in self.graph:
+            self.graph[vertex] = []
+            logger.info(f"新增節點: {vertex}")
+            
+    def add_edge(self, vertex1: Any, vertex2: Any) -> None:
+        """
+        # 新增邊
+        
+        ## 參數
+        * `vertex1`: 第一個節點
+        * `vertex2`: 第二個節點
+        """
+        if vertex1 not in self.graph:
+            self.add_vertex(vertex1)
+        if vertex2 not in self.graph:
+            self.add_vertex(vertex2)
+            
+        if vertex2 not in self.graph[vertex1]:
+            self.graph[vertex1].append(vertex2)
+            logger.info(f"新增邊: {vertex1} -> {vertex2}")
+            
+    def remove_vertex(self, vertex: Any) -> None:
+        """
+        # 刪除節點
+        
+        ## 參數
+        * `vertex`: 要刪除的節點
+        """
+        if vertex in self.graph:
+            del self.graph[vertex]
+            for v in self.graph:
+                if vertex in self.graph[v]:
+                    self.graph[v].remove(vertex)
+            logger.info(f"刪除節點: {vertex}")
+            
+    def remove_edge(self, vertex1: Any, vertex2: Any) -> None:
+        """
+        # 刪除邊
+        
+        ## 參數
+        * `vertex1`: 第一個節點
+        * `vertex2`: 第二個節點
+        """
+        if vertex1 in self.graph and vertex2 in self.graph[vertex1]:
+            self.graph[vertex1].remove(vertex2)
+            logger.info(f"刪除邊: {vertex1} -> {vertex2}")
+    
+    def visualize(self) -> None:
+        """
+        視覺化圖結構
+        
+        使用 networkx 和 matplotlib 將圖結構視覺化。
+        
+        Raises:
+            ImportError: 未安裝 networkx 或 matplotlib 套件
+        """
+        logger.info("開始視覺化圖結構")
+        
+        try:
+            import networkx as nx
+            import matplotlib.pyplot as plt
+            logger.debug("成功導入 networkx 和 matplotlib 模組")
+        except ImportError as e:
+            error_msg = "需要安裝 networkx 和 matplotlib 套件才能使用視覺化功能"
+            logger.error(f"{error_msg}: {str(e)}")
+            raise ImportError(error_msg) from e
+
+        # 建立 NetworkX 圖物件
+        G = nx.DiGraph()
+        
+        # 加入所有節點和邊
+        for vertex in self.graph:
+            G.add_node(vertex)
+            for neighbor in self.graph[vertex]:
+                G.add_edge(vertex, neighbor)
+        
+        # 設定視覺化參數
+        plt.figure(figsize=(12, 8))
+        pos = nx.spring_layout(G)
+        
+        # 繪製節點
+        nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=500)
+        
+        # 繪製邊
+        nx.draw_networkx_edges(G, pos, edge_color='gray', arrows=True, arrowsize=20)
+        
+        # 加入節點標籤
+        nx.draw_networkx_labels(G, pos)
+        
+        plt.title("Graph Visualization")
+        plt.axis('off')
+        
+        logger.debug("完成圖結構視覺化")
+        plt.show()
+
+__all__ = [
+    "Structure",
+    "Stack",
+    "Queue",
+    "LinkedList",
+    "Graph"
+]
+

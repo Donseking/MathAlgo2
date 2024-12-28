@@ -1,84 +1,127 @@
 """
 # MathAlgo2 - 數學演算法工具包
 
-## 功能特點
+這個模組包含了豐富的數學演算法實現，提供從基礎到進階的數學運算功能。
 
-### 微積分模組
-- 符號與數值微分
-- 定積分與不定積分
-- 極限計算
-- 泰勒級數展開
-- 函數繪圖
+## 模組結構
 
-### 矩陣模組
-- 基礎矩陣運算（加、減、乘）
-- 矩陣轉置
-- 行列式計算
-- 逆矩陣運算
+mathalgo2/
+├── __init__.py
+├── sorting/              # 排序演算法
+├── searching/           # 搜尋演算法
+├── visualization/       # 演算法視覺化
+├── data_structures/    # 資料結構
+├── cryptography/       # 密碼學
+├── calculus/           # 微積分
+├── basic_math/         # 基本數學運算
+├── advanced_math/      # 高級數學運算
+├── matrix_operations/  # 矩陣運算
+├── statistical_analysis/ # 統計分析
+└── utils/              # 工具模組
 
-### 向量空間模組
-- 向量運算
-- 基底轉換
-- 線性獨立檢驗
+## 功能概述
 
-## 使用範例
+### 1. 基礎數學運算 (basic_math/)
+- 基本的數學運算函數，如加法、減法、乘法和除法
+
+### 2. 高級數學運算 (advanced_math/)
+- 高級數學運算函數，如微積分和線性代數
+
+### 3. 矩陣運算 (matrix_operations/)
+- 矩陣運算函數，如矩陣乘法和轉置
+
+### 4. 統計分析 (statistical_analysis/)
+- 統計分析函數，如平均值、標準差和回歸分析
+
+### 5. 排序演算法 (sorting/)
+- bubble_sort: 氣泡排序
+- quick_sort: 快速排序
+- merge_sort: 合併排序
+- heap_sort: 堆積排序
+
+### 6. 搜尋演算法 (searching/)
+- binary_search: 二分搜尋
+- linear_search: 線性搜尋
+- depth_first_search: 深度優先搜尋
+- breadth_first_search: 廣度優先搜尋
+
+### 7. 資料結構 (data_structures/)
+- BinaryTree: 二元樹結構
+- LinkedList: 鏈結串列
+- Queue: 佇列結構
+- Stack: 堆疊結構
+
+### 8. 密碼學 (cryptography/)
+- morse: 摩斯密碼編碼與解碼
+- ascii: ASCII 編碼與解碼
+- caesar: 凱薩密碼加密與解密
+- rail_fence: 柵欄密碼加密與解密
+
+### 9. 微積分模組 (calculus/)
+- derivative: 符號微分與數值微分
+- integral: 定積分與不定積分計算
+- limit: 極限計算功能
+- taylor_series: 泰勒級數展開
+- plot: 函數圖形繪製
+
+### 10. 工具模組 (utils/)
+- file_handler: 檔案操作工具
+- math_utils: 數學函數工具
+- logger: 日誌記錄系統
+
+## 使用方法
+
+基本導入：
 ```python
-from mathalgo2.math import Calculus
-f = Calculus("x**2")
-derivative = f.derivative()
-print(derivative)  # 輸出: 2*x
+from mathalgo2.sorting import quick_sort
+from mathalgo2.searching import binary_search
+from mathalgo2.basic_math import addition
+from mathalgo2.matrix_operations import matrix_multiply
 ```
 
-## 專案資訊
-- 版本：0.1.0
-- 作者：Donseking
-- 授權：MIT
-- 文件：https://github.com/Donseking/MathAlgo2
+完整功能導入：
+```python
+import mathalgo2
+```
+
+詳細使用方法請參考各子模組的文檔。
 """
 
-from typing import Dict, List
-import importlib.util
+# 版本信息
+__version__ = '1.0.0'
+__author__ = 'Your Name'
+__email__ = 'your.email@example.com'
 
-__version__ = "0.1.0"
-__author__ = "Donseking"
-__email__ = "0717albert@gmail.com"
-
-# 導入主要類別
-from mathalgo2.math import Calculus, Matrix, Vector_space
+from mathalgo2.algorithm.GraphAlgo import *
+from mathalgo2.algorithm.SearchAlgo import *
+from mathalgo2.algorithm.SortAlgo import *
+from mathalgo2.algorithm.StrAlgo import *
+from mathalgo2.algorithm.OpAlgo import *
+from mathalgo2.Code import *
+from mathalgo2.FileUtiles import *
+from mathalgo2.logger import *
+from mathalgo2.BaseMath import *
+from mathalgo2.MathUtiles import *
+from mathalgo2.Structure import *
 
 __all__ = [
+    "GraphAlgo",
+    "SearchAlgo",
+    "SortAlgo",
+    "StrAlgo",
+    "OpAlgo",
+    "CodeBase",
+    "ClassicalCipher",
+    "FileUtils",
+    "logger",
     "Calculus",
     "Matrix",
-    "Vector_space"
+    "Vector_space",
+    "MathUtils",
+    "Structure",
+    "Stack",
+    "Queue",
+    "LinkedList",
+    "Graph"
 ]
 
-def _check_dependencies() -> None:
-    """檢查必要的套件相依性
-    
-    檢查所有需要的套件是否已經安裝。
-    
-    Raises:
-        ImportError: 當有套件未安裝時拋出錯誤
-    """
-    required_packages: Dict[str, str] = {
-        "sympy": "用於符號計算",
-        "numpy": "用於數值計算",
-        "matplotlib": "用於繪圖功能"
-    }
-    
-    missing_packages: List[str] = [
-        f"{package} ({purpose})"
-        for package, purpose in required_packages.items()
-        if not importlib.util.find_spec(package)
-    ]
-    
-    if missing_packages:
-        packages_to_install = ' '.join(pkg.split()[0] for pkg in missing_packages)
-        raise ImportError(
-            "缺少必要的套件，請安裝：\n"
-            f"{chr(10).join(f'- {pkg}' for pkg in missing_packages)}\n\n"
-            f"可使用以下指令安裝：pip install {packages_to_install}"
-        )
-
-# 在導入時檢查相依性
-_check_dependencies()
