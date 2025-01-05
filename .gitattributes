@@ -1,0 +1,13 @@
+# 自動處理文本文件的行尾
+* text=auto
+
+# 指定特定文件類型的編碼
+*.py text diff=python encoding=utf-8
+*.rst text encoding=utf-8
+*.md text encoding=utf-8
+*.txt text encoding=utf-8
+*.yml text encoding=utf-8
+*.yaml text encoding=utf-8
+*.json text encoding=utf-8
+*.ini text encoding=utf-8
+*.cfg text encoding=utf-8

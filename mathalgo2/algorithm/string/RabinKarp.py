@@ -1,37 +1,57 @@
 class RabinKarp:
     def __init__(self, pattern: str):
+        """初始化 Rabin-Karp 算法
+
+        Args:
+            pattern: 要搜尋的模式字串
+        """
+        if not pattern:
+            raise ValueError("Pattern cannot be empty")
+
         self.pattern = pattern
-        self.pattern_hash = self._hash(pattern)
         self.pattern_length = len(pattern)
-        self.prime = 101
-        self.d = 256  # Number of characters in input alphabet
+        self.d = 256  # 字符集大小
+        self.q = 101  # 一個質數
 
-    def _hash(self, string: str, start: int = 0, end: int = None) -> int:
-        if end is None:
-            end = len(string)
-        hash_value = 0
-        for i in range(start, end):
-            hash_value = (hash_value * self.d + ord(string[i])) % self.prime
-        return hash_value
+    def search(self, text: str) -> list[int]:
+        """在文本中搜尋模式字串
 
-    def search(self, text: str) -> list:
+        Args:
+            text: 要被搜尋的文本
+
+        Returns:
+            list[int]: 所有匹配的起始位置列表
+        """
         matches = []
-        n, m = len(text), self.pattern_length
-        if n < m:
+        N = len(text)
+        M = self.pattern_length
+
+        if M > N:
             return matches
 
-        text_hash = self._hash(text, 0, m)
-        h = pow(self.d, m-1) % self.prime
+        # 計算模式字串的雜湊值
+        pattern_hash = 0
+        text_hash = 0
+        h = pow(self.d, M - 1) % self.q
 
-        for i in range(n - m + 1):
-            if text_hash == self.pattern_hash:
-                if text[i:i+m] == self.pattern:
+        # 計算第一個窗口的雜湊值
+        for i in range(M):
+            pattern_hash = (self.d * pattern_hash + ord(self.pattern[i])) % self.q
+            text_hash = (self.d * text_hash + ord(text[i])) % self.q
+
+        # 滑動窗口
+        for i in range(N - M + 1):
+            if pattern_hash == text_hash:
+                # 雜湊值相同時，進行字符比對
+                if text[i : i + M] == self.pattern:
                     matches.append(i)
-            
-            if i < n - m:
-                text_hash = (self.d * (text_hash - ord(text[i]) * h) + 
-                           ord(text[i + m])) % self.prime
+
+            # 計算下一個窗口的雜湊值
+            if i < N - M:
+                text_hash = (
+                    self.d * (text_hash - ord(text[i]) * h) + ord(text[i + M])
+                ) % self.q
                 if text_hash < 0:
-                    text_hash += self.prime
+                    text_hash += self.q
 
         return matches

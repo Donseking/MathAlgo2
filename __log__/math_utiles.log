@@ -1,0 +1,86 @@
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluating postfix expression: ['2', '3', '+']
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluation result: 5.0
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluating postfix expression: ['2', '3', '4', '*', '+']
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluation result: 14.0
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluating postfix expression: ['1', '0', '/']
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluation result: inf
+2025-01-02 22:04:27 - math_utiles - INFO - Evaluating postfix expression: ['1', '+']
+2025-01-02 22:04:27 - math_utiles - ERROR - Error evaluating postfix expression: 表達式不合法，操作數不足
+2025-01-02 22:04:27 - math_utiles - INFO - Calculating prime factors for: 12
+2025-01-02 22:04:27 - math_utiles - INFO - Prime factors: [2, 2, 3]
+2025-01-02 22:04:27 - math_utiles - INFO - Calculating prime factors for: 17
+2025-01-02 22:04:27 - math_utiles - INFO - Prime factors: [17]
+2025-01-02 22:04:27 - math_utiles - INFO - Calculating prime factors for: -1
+2025-01-02 22:04:27 - math_utiles - ERROR - Invalid input: -1
+2025-01-02 22:04:27 - math_utiles - ERROR - Error in prime factorization: 輸入必須是正整數
+2025-01-02 22:04:27 - math_utiles - INFO - 開始對 12 進行因數分解
+2025-01-02 22:04:27 - math_utiles - INFO - 最終排序後的因數對: [[1, 12], [2, 6], [3, 4], [4, 3], [6, 2], [12, 1]]
+2025-01-02 22:04:27 - math_utiles - INFO - 開始對 7 進行因數分解
+2025-01-02 22:04:27 - math_utiles - INFO - 最終排序後的因數對: [[1, 7], [7, 1]]
+2025-01-02 22:04:27 - math_utiles - INFO - 開始對 -1 進行因數分解
+2025-01-02 22:04:27 - math_utiles - ERROR - 無效的輸入類型或數值: -1
+2025-01-02 22:04:27 - math_utiles - ERROR - 因數分解過程發生錯誤: 輸入必須是正整數
+2025-01-02 22:04:27 - math_utiles - INFO - 開始將數據轉換為矩陣。輸入數據: 1 2 3 4
+2025-01-02 22:04:27 - math_utiles - INFO - 數組大小: 4
+2025-01-02 22:04:27 - math_utiles - INFO - 開始對 4 進行因數分解
+2025-01-02 22:04:27 - math_utiles - INFO - 最終排序後的因數對: [[1, 4], [2, 2], [4, 1]]
+2025-01-02 22:04:27 - math_utiles - INFO - 選擇的矩陣維度: [2, 2]
+2025-01-02 22:04:27 - math_utiles - INFO - 重塑後的矩陣:
+[[1 2]
+ [3 4]]
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(5,2)
+2025-01-02 22:04:27 - math_utiles - INFO - 組合數計算結果: C(5,2) = 10
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(5,0)
+2025-01-02 22:04:27 - math_utiles - INFO - 組合數計算結果: C(5,0) = 1
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(5,5)
+2025-01-02 22:04:27 - math_utiles - INFO - 組合數計算結果: C(5,0) = 1
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(5,6)
+2025-01-02 22:04:27 - math_utiles - INFO - 計算排列數 P(5,2)
+2025-01-02 22:04:27 - math_utiles - INFO - 排列數計算結果: P(5,2) = 20
+2025-01-02 22:04:27 - math_utiles - INFO - 計算排列數 P(5,5)
+2025-01-02 22:04:27 - math_utiles - INFO - 排列數計算結果: P(5,5) = 120
+2025-01-02 22:04:27 - math_utiles - INFO - 計算排列數 P(5,0)
+2025-01-02 22:04:27 - math_utiles - INFO - 排列數計算結果: P(5,0) = 1
+2025-01-02 22:04:27 - math_utiles - INFO - 計算排列數 P(5,6)
+2025-01-02 22:04:27 - math_utiles - INFO - 計算階乘: 5!
+2025-01-02 22:04:27 - math_utiles - INFO - 階乘計算結果: 5! = 120
+2025-01-02 22:04:27 - math_utiles - INFO - 計算階乘: 0!
+2025-01-02 22:04:27 - math_utiles - INFO - 計算階乘: -1!
+2025-01-02 22:04:27 - math_utiles - ERROR - 嘗試計算負數的階乘: -1
+2025-01-02 22:04:27 - math_utiles - ERROR - 計算階乘時發生錯誤: 階乘不能用於負數
+2025-01-02 22:04:27 - math_utiles - INFO - 檢查完美數: 6
+2025-01-02 22:04:27 - math_utiles - INFO - 6 是完美數
+2025-01-02 22:04:27 - math_utiles - INFO - 檢查完美數: 28
+2025-01-02 22:04:27 - math_utiles - INFO - 28 是完美數
+2025-01-02 22:04:27 - math_utiles - INFO - 檢查完美數: 12
+2025-01-02 22:04:27 - math_utiles - INFO - 12 不是完美數
+2025-01-02 22:04:27 - math_utiles - INFO - 檢查完美數: 1
+2025-01-02 22:04:27 - math_utiles - INFO - 檢查完美數: 0
+2025-01-02 22:04:27 - math_utiles - INFO - 計算歐拉函數 φ(10)
+2025-01-02 22:04:27 - math_utiles - INFO - 歐拉函數計算結果: φ(5) = 4
+2025-01-02 22:04:27 - math_utiles - INFO - 計算歐拉函數 φ(1)
+2025-01-02 22:04:27 - math_utiles - INFO - 歐拉函數計算結果: φ(1) = 1
+2025-01-02 22:04:27 - math_utiles - INFO - 計算歐拉函數 φ(0)
+2025-01-02 22:04:27 - math_utiles - ERROR - 輸入必須為正整數: 0
+2025-01-02 22:04:27 - math_utiles - ERROR - 計算歐拉函數時發生錯誤: 輸入必須為正整數
+2025-01-02 22:04:27 - math_utiles - INFO - 計算擴展歐幾里得算法: a=35, b=15
+2025-01-02 22:04:27 - math_utiles - INFO - 計算擴展歐幾里得算法: a=15, b=5
+2025-01-02 22:04:27 - math_utiles - INFO - 計算擴展歐幾里得算法: a=5, b=0
+2025-01-02 22:04:27 - math_utiles - INFO - 擴展歐幾里得算法結果: d=5, x=0, y=1
+2025-01-02 22:04:27 - math_utiles - INFO - 擴展歐幾里得算法結果: d=5, x=1, y=-2
+2025-01-02 22:04:27 - math_utiles - INFO - 計算第0個卡塔蘭數
+2025-01-02 22:04:27 - math_utiles - INFO - 計算第1個卡塔蘭數
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(2,1)
+2025-01-02 22:04:27 - math_utiles - INFO - 組合數計算結果: C(2,1) = 2
+2025-01-02 22:04:27 - math_utiles - INFO - 第1個卡塔蘭數為: 1
+2025-01-02 22:04:27 - math_utiles - INFO - 計算第2個卡塔蘭數
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(4,2)
+2025-01-02 22:04:27 - math_utiles - INFO - 組合數計算結果: C(4,2) = 6
+2025-01-02 22:04:27 - math_utiles - INFO - 第2個卡塔蘭數為: 2
+2025-01-02 22:04:27 - math_utiles - INFO - 計算第3個卡塔蘭數
+2025-01-02 22:04:27 - math_utiles - INFO - 計算組合數 C(6,3)
+2025-01-02 22:04:27 - math_utiles - INFO - 組合數計算結果: C(6,3) = 20
+2025-01-02 22:04:27 - math_utiles - INFO - 第3個卡塔蘭數為: 5
+2025-01-02 22:04:27 - math_utiles - INFO - 計算第-1個卡塔蘭數
+2025-01-02 22:04:27 - math_utiles - ERROR - 卡塔蘭數不能為負數
+2025-01-02 22:04:27 - math_utiles - ERROR - 計算卡塔蘭數時發生錯誤: 輸入必須為非負整數

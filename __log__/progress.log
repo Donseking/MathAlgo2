@@ -1,0 +1,163 @@
+2024-12-29 10:23:05 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:23:05 - Progress_Bar - ERROR - 讀取時發生錯誤: 'ProgressBar' object does not support the context manager protocol
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\code\practice\mathalgo2\mathalgo2\loading.py", line 66, in read_path
+    with ProgressBar(total=total_size, desc=f"Reading: {os.path.basename(path)}") as bar:
+         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'ProgressBar' object does not support the context manager protocol
+2024-12-29 10:24:09 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:24:10 - Progress_Bar - ERROR - 進度條執行出錯: 'ProgressBar' object has no attribute 'update'
+2024-12-29 10:24:10 - Progress_Bar - ERROR - 讀取時發生錯誤: 'ProgressBar' object has no attribute 'update'
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\code\practice\mathalgo2\mathalgo2\loading.py", line 73, in read_path
+    bar.update(current_size)
+    ^^^^^^^^^^
+AttributeError: 'ProgressBar' object has no attribute 'update'
+2024-12-29 10:27:17 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:27:17 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:28:05 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:28:05 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:29:00 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:29:00 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:30:40 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:30:40 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:31:41 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:31:41 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:32:07 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:32:07 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:33:03 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:33:03 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:34:26 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:34:32 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:35:04 - Progress_Bar - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:35:10 - Progress_Bar - INFO - 完成讀取檔案: t.txt
+2024-12-29 10:36:06 - Progress_Bar - ERROR - 路徑不存在: C:/Users/user/Desktop/code/mathalgo2/tests
+2024-12-29 10:36:37 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:36:37 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_base_math.py
+2024-12-29 10:36:37 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_code.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_file_utils.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_graph_algo.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_logger.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_math_utils.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_op_algo.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_rabin_karp.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_search_algo.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_sort_algo.py
+2024-12-29 10:36:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_structure.py
+2024-12-29 10:36:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_struc_algo.py
+2024-12-29 10:36:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_str_algo.py
+2024-12-29 10:36:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\__init__.py
+2024-12-29 10:36:39 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:38:32 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_base_math.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_code.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_file_utils.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_graph_algo.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_logger.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_math_utils.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_op_algo.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_rabin_karp.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_search_algo.py
+2024-12-29 10:38:32 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_sort_algo.py
+2024-12-29 10:38:33 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_structure.py
+2024-12-29 10:38:33 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_struc_algo.py
+2024-12-29 10:38:33 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_str_algo.py
+2024-12-29 10:38:33 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\__init__.py
+2024-12-29 10:38:33 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:40:25 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_base_math.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_code.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_file_utils.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_graph_algo.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_logger.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_math_utils.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_op_algo.py
+2024-12-29 10:40:25 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_rabin_karp.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_search_algo.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_sort_algo.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_structure.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_struc_algo.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_str_algo.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\__init__.py
+2024-12-29 10:40:26 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:42:27 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_base_math.py
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_code.py
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_file_utils.py
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_graph_algo.py
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_logger.py
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_math_utils.py
+2024-12-29 10:42:27 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_op_algo.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_rabin_karp.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_search_algo.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_sort_algo.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_structure.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_struc_algo.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_str_algo.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\__init__.py
+2024-12-29 10:42:28 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:43:48 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:43:48 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_base_math.py
+2024-12-29 10:43:52 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_code.py
+2024-12-29 10:43:55 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_file_utils.py
+2024-12-29 10:43:59 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_graph_algo.py
+2024-12-29 10:44:01 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_logger.py
+2024-12-29 10:44:04 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_math_utils.py
+2024-12-29 10:44:07 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_op_algo.py
+2024-12-29 10:44:09 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_rabin_karp.py
+2024-12-29 10:44:12 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_search_algo.py
+2024-12-29 10:44:13 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_sort_algo.py
+2024-12-29 10:44:16 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_structure.py
+2024-12-29 10:44:18 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_struc_algo.py
+2024-12-29 10:44:21 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_str_algo.py
+2024-12-29 10:44:23 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\__init__.py
+2024-12-29 10:44:23 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:44:46 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:44:46 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_base_math.py
+2024-12-29 10:44:47 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_code.py
+2024-12-29 10:44:48 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_file_utils.py
+2024-12-29 10:44:49 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_graph_algo.py
+2024-12-29 10:44:49 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_logger.py
+2024-12-29 10:44:50 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_math_utils.py
+2024-12-29 10:44:50 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_op_algo.py
+2024-12-29 10:44:51 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_rabin_karp.py
+2024-12-29 10:44:51 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_search_algo.py
+2024-12-29 10:44:51 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_sort_algo.py
+2024-12-29 10:44:52 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_structure.py
+2024-12-29 10:44:52 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_struc_algo.py
+2024-12-29 10:44:53 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\test_str_algo.py
+2024-12-29 10:44:53 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2/tests\__init__.py
+2024-12-29 10:44:53 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2/tests
+2024-12-29 10:45:10 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2
+2024-12-29 10:45:10 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\.coverage
+2024-12-29 10:45:15 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\.gitignore
+2024-12-29 10:45:15 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\CHANGELOG.md
+2024-12-29 10:45:15 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\LICENSE
+2024-12-29 10:45:16 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\pyproject.toml
+2024-12-29 10:45:16 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\pytest.ini
+2024-12-29 10:45:16 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\README.md
+2024-12-29 10:45:16 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\requirements-dev.txt
+2024-12-29 10:45:16 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\requirements.txt
+2024-12-29 10:45:17 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\setup.cfg
+2024-12-29 10:45:17 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/code/practice/mathalgo2\setup.py
+2024-12-29 10:45:17 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/code/practice/mathalgo2
+2024-12-29 10:45:37 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users/User/Desktop/
+2024-12-29 10:45:37 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Cursor.lnk
+2024-12-29 10:45:37 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/desktop.ini
+2024-12-29 10:45:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Discord.lnk
+2024-12-29 10:45:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Instagram.lnk
+2024-12-29 10:45:38 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/LINE.lnk
+2024-12-29 10:45:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Notion Calendar.lnk
+2024-12-29 10:45:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Notion.lnk
+2024-12-29 10:45:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/shutdown.lnk
+2024-12-29 10:45:39 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Syncthing Configuration Page.lnk
+2024-12-29 10:45:40 - Progress_Bar - INFO - 讀取檔案: C:/Users/User/Desktop/Visual Studio Code.lnk
+2024-12-29 10:45:40 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users/User/Desktop/
+2024-12-29 10:46:02 - Progress_Bar - INFO - 開始讀取資料夾: C:/
+2024-12-29 10:46:02 - Progress_Bar - INFO - 讀取檔案: C:/.GamingRoot
+2024-12-29 10:46:02 - Progress_Bar - INFO - 讀取檔案: C:/DumpStack.log.tmp
+2024-12-29 10:46:02 - Progress_Bar - INFO - 完成讀取資料夾: C:/
+2024-12-29 10:46:19 - Progress_Bar - ERROR - 路徑不存在: C:/User
+2024-12-29 10:46:33 - Progress_Bar - INFO - 開始讀取資料夾: C:/Users
+2024-12-29 10:46:33 - Progress_Bar - INFO - 讀取檔案: C:/Users\desktop.ini
+2024-12-29 10:46:33 - Progress_Bar - INFO - 完成讀取資料夾: C:/Users

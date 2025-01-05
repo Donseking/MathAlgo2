@@ -1,12 +1,28 @@
-2024-12-29 01:45:24,438 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
-2024-12-29 01:51:36,824 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
-2024-12-29 01:52:33,282 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
-2024-12-29 01:52:33,282 - GraphAlgo - INFO - 開始Dijkstra算法，起始節點: 合宜路
-2024-12-29 01:52:33,282 - GraphAlgo - INFO - Dijkstra算法完成
-2024-12-29 01:53:50,657 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
-2024-12-29 01:53:50,657 - GraphAlgo - INFO - 開始Dijkstra算法，起始節點: 合宜路
-2024-12-29 01:53:50,657 - GraphAlgo - INFO - Dijkstra算法完成
-2024-12-29 01:55:28,578 - GraphAlgo - INFO - 初始化圖論類別，節點數: 5
-2024-12-29 01:55:28,578 - GraphAlgo - INFO - 開始視覺化 dijkstra 搜尋
-2024-12-29 01:55:30,261 - GraphAlgo - INFO - 開始Dijkstra算法，起始節點: 合宜路
-2024-12-29 01:55:32,632 - GraphAlgo - INFO - Dijkstra算法完成
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:26 - [ERROR] - GraphAlgo - 起始節點 X 不在圖中
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 開始BFS搜尋，起始節點: A
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - BFS搜尋完成:
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - - 執行時間: 0.001 秒
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - - 訪問節點數: 4
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - - 訪問順序: ['A', 'B', 'C', 'D']
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 開始DFS搜尋，起始節點: A
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - DFS搜尋完成，訪問順序: ['A', 'B', 'D', 'C']
+2025-01-02 22:04:26 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 開始Dijkstra算法，起始節點: A
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - Dijkstra算法完成
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 開始Dijkstra算法，起始節點: A
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - Dijkstra算法完成
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 開始Dijkstra算法，起始節點: A
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - Dijkstra算法完成
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 初始化圖論類別，節點數: 4
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 開始BFS搜尋，起始節點: A
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - BFS搜尋完成:
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - - 執行時間: 0.000 秒
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - - 訪問節點數: 4
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - - 訪問順序: ['A', 'B', 'C', 'D']
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - 開始DFS搜尋，起始節點: A
+2025-01-02 22:04:27 - [INFO] - GraphAlgo - DFS搜尋完成，訪問順序: ['A', 'B', 'D', 'C']

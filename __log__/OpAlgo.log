@@ -1,0 +1,25 @@
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化TestOptimizer最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化TestOptimizer最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化TestOptimizer最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化TestOptimizer最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化最佳化工廠
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化最佳化工廠
+2025-01-02 22:04:27 - OpAlgo - INFO - 創建genetic最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化GeneticAlgorithm最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化GeneticAlgorithm最佳化器，種群大小: 50
+2025-01-02 22:04:27 - OpAlgo - INFO - 創建annealing最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化SimulatedAnnealing最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化SimulatedAnnealing最佳化器，初始溫度: 100.0, 降溫速率: 0.95
+2025-01-02 22:04:27 - OpAlgo - INFO - 創建gradient最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化GradientDescent最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化GradientDescent最佳化器，學習率: 0.01
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化最佳化工廠
+2025-01-02 22:04:27 - OpAlgo - INFO - 創建invalid_algorithm最佳化器
+2025-01-02 22:04:27 - OpAlgo - ERROR - 嘗試創建不支援的算法: invalid_algorithm
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化最佳化工廠
+2025-01-02 22:04:27 - OpAlgo - INFO - 創建test最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化TestOptimizer最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化最佳化工廠
+2025-01-02 22:04:27 - OpAlgo - INFO - 創建genetic最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化GeneticAlgorithm最佳化器
+2025-01-02 22:04:27 - OpAlgo - INFO - 初始化GeneticAlgorithm最佳化器，種群大小: 50

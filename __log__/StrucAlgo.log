@@ -1,0 +1,163 @@
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化BinaryTree
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化二元樹
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化BinaryTree
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化二元樹
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入根節點: 5
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 2
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 2
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 4
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 4
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 6
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 6
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 8
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 8
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化BinaryTree
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化二元樹
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入根節點: 5
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 2
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 2
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 4
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 4
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 6
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 6
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 8
+2025-01-02 22:04:27 - StrucAlgo - INFO - 移動到右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 8
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始搜尋節點: 5
+2025-01-02 22:04:27 - StrucAlgo - INFO - 找到節點: 5
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始搜尋節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 找到節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始搜尋節點: 9
+2025-01-02 22:04:27 - StrucAlgo - INFO - 未找到節點: 9
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化BinaryTree
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化二元樹
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入根節點: 5
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化BinaryTree
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化二元樹
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入根節點: 5
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入左子節點: 3
+2025-01-02 22:04:27 - StrucAlgo - INFO - 開始插入節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 插入右子節點: 7
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化AVLTree
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化AVL樹
+2025-01-02 22:04:27 - StrucAlgo - INFO - 初始化AVLTree
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化AVLTree
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化AVL樹
+2025-01-02 22:04:28 - StrucAlgo - INFO - 開始插入節點: 10
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入新節點: 10
+2025-01-02 22:04:28 - StrucAlgo - INFO - 開始插入節點: 20
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: None
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入新節點: 20
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 10 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 10 的平衡因子為 -1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 開始插入節點: 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: 20
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: None
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入新節點: 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 20 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 20 的平衡因子為 -1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 10 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 10 的平衡因子為 -2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 左旋轉以平衡節點: 10
+2025-01-02 22:04:28 - StrucAlgo - INFO - 左旋轉節點 10
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 10 的高度為 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 20 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 開始插入節點: 40
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: None
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入新節點: 40
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 30 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 30 的平衡因子為 -1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 20 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 20 的平衡因子為 -1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 開始插入節點: 50
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: 40
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: None
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入新節點: 50
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 40 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 40 的平衡因子為 -1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 30 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 30 的平衡因子為 -2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 左旋轉以平衡節點: 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 左旋轉節點 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 30 的高度為 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 40 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 20 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 20 的平衡因子為 -1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 開始插入節點: 25
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到右子節點: 40
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到左子節點: 30
+2025-01-02 22:04:28 - StrucAlgo - INFO - 移動到左子節點: None
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入新節點: 25
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 30 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 30 的平衡因子為 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 40 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 40 的平衡因子為 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 20 的高度為 4
+2025-01-02 22:04:28 - StrucAlgo - INFO - 節點 20 的平衡因子為 -2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 右旋轉右子節點並左旋轉以平衡節點: 20
+2025-01-02 22:04:28 - StrucAlgo - INFO - 右旋轉節點 40
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 40 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 30 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 左旋轉節點 20
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 20 的高度為 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 更新節點 30 的高度為 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 4
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [4]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 8
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 4]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 4, 2]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 6
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 6, 2, 4]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 6, 2, 4, 1]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 4
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [4]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 8
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 4]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 4, 2]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 6
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 6, 2, 4]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 插入元素: 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [8, 6, 2, 4, 1]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 提取最大元素: 8
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [6, 4, 2, 1]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 提取最大元素: 6
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [4, 1, 2]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 提取最大元素: 4
+2025-01-02 22:04:28 - StrucAlgo - INFO - 堆化完成: [2, 1]
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化並查集
+2025-01-02 22:04:28 - StrucAlgo - INFO - 創建新集合: 1
+2025-01-02 22:04:28 - StrucAlgo - INFO - 創建新集合: 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 合併集合: 1 和 2
+2025-01-02 22:04:28 - StrucAlgo - INFO - 創建新集合: 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 合併集合: 2 和 3
+2025-01-02 22:04:28 - StrucAlgo - INFO - 創建新集合: 4
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化BinaryTree
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化二元樹
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化AVLTree
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化AVL樹
+2025-01-02 22:04:28 - StrucAlgo - INFO - 初始化並查集

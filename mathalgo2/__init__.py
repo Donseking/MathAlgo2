@@ -7,123 +7,87 @@
 
 mathalgo2/
 ├── __init__.py
-├── sorting/              # 排序演算法
-├── searching/           # 搜尋演算法
-├── visualization/       # 演算法視覺化
-├── data_structures/    # 資料結構
-├── cryptography/       # 密碼學
-├── calculus/           # 微積分
-├── basic_math/         # 基本數學運算
-├── advanced_math/      # 高級數學運算
-├── matrix_operations/  # 矩陣運算
-├── statistical_analysis/ # 統計分析
-└── utils/              # 工具模組
+├── algorithm/          # 演算法相關
+│   ├── GraphAlgo.py   # 圖論演算法
+│   ├── SearchAlgo.py  # 搜尋演算法
+│   ├── SortAlgo.py    # 排序演算法
+│   ├── StrAlgo.py     # 字串演算法
+│   ├── OpAlgo.py      # 最佳化演算法
+│   └── StrucAlgo.py   # 結構演算法
+├── Code.py            # 編碼相關
+├── FileUtiles.py      # 檔案處理工具
+├── logger.py          # 日誌系統
+├── BaseMath.py        # 基礎數學
+├── MathUtiles.py      # 數學工具
+└── Structure.py       # 資料結構
 
-## 功能概述
+## 主要功能模組
 
-### 1. 基礎數學運算 (basic_math/)
-- 基本的數學運算函數，如加法、減法、乘法和除法
+### 1. 檔案處理 (FileUtiles.py)
+- FileIO: 檔案輸入輸出基本操作
+- FileProcessor: 進階檔案處理（壓縮、加密、圖片處理）
+- DataAnalyzer: 數據分析與視覺化
 
-### 2. 高級數學運算 (advanced_math/)
-- 高級數學運算函數，如微積分和線性代數
+### 2. 演算法 (algorithm/)
+- 圖論演算法
+- 搜尋演算法
+- 排序演算法
+- 字串演算法
+- 最佳化演算法
+- 結構演算法
 
-### 3. 矩陣運算 (matrix_operations/)
-- 矩陣運算函數，如矩陣乘法和轉置
+### 3. 數學工具
+- 基礎數學運算
+- 進階數學功能
+- 矩陣運算
+- 向量空間運算
 
-### 4. 統計分析 (statistical_analysis/)
-- 統計分析函數，如平均值、標準差和回歸分析
-
-### 5. 排序演算法 (sorting/)
-- bubble_sort: 氣泡排序
-- quick_sort: 快速排序
-- merge_sort: 合併排序
-- heap_sort: 堆積排序
-
-### 6. 搜尋演算法 (searching/)
-- binary_search: 二分搜尋
-- linear_search: 線性搜尋
-- depth_first_search: 深度優先搜尋
-- breadth_first_search: 廣度優先搜尋
-
-### 7. 資料結構 (data_structures/)
-- BinaryTree: 二元樹結構
-- LinkedList: 鏈結串列
-- Queue: 佇列結構
-- Stack: 堆疊結構
-
-### 8. 密碼學 (cryptography/)
-- morse: 摩斯密碼編碼與解碼
-- ascii: ASCII 編碼與解碼
-- caesar: 凱薩密碼加密與解密
-- rail_fence: 柵欄密碼加密與解密
-
-### 9. 微積分模組 (calculus/)
-- derivative: 符號微分與數值微分
-- integral: 定積分與不定積分計算
-- limit: 極限計算功能
-- taylor_series: 泰勒級數展開
-- plot: 函數圖形繪製
-
-### 10. 工具模組 (utils/)
-- file_handler: 檔案操作工具
-- math_utils: 數學函數工具
-- logger: 日誌記錄系統
+### 4. 資料結構
+- 樹結構
+- 堆疊與佇列
+- 鏈結串列
+- 圖結構
+- 二元樹
+- AVL樹
+- 並查集
+- 堆積
 
 ## 使用方法
 
 基本導入：
 ```python
-from mathalgo2.sorting import quick_sort
-from mathalgo2.searching import binary_search
-from mathalgo2.basic_math import addition
-from mathalgo2.matrix_operations import matrix_multiply
+from mathalgo2.FileUtiles import FileIO, FileProcessor, DataAnalyzer
+from mathalgo2.algorithm import SearchAlgo, SortAlgo
 ```
 
 完整功能導入：
 ```python
 import mathalgo2
 ```
-
-詳細使用方法請參考各子模組的文檔。
 """
 
 # 版本信息
-__version__ = '1.0.0'
-__author__ = 'Your Name'
-__email__ = 'your.email@example.com'
+__version__ = "1.0.0"
+__author__ = "Donseking"
+__email__ = "0717albert@gmail.com"
 
+# 建議添加版本檢查
+import sys
+
+# 從各模組導入
 from mathalgo2.algorithm.GraphAlgo import *
+from mathalgo2.algorithm.OpAlgo import *
 from mathalgo2.algorithm.SearchAlgo import *
 from mathalgo2.algorithm.SortAlgo import *
 from mathalgo2.algorithm.StrAlgo import *
-from mathalgo2.algorithm.OpAlgo import *
-from mathalgo2.Code import *
-from mathalgo2.FileUtiles import *
-from mathalgo2.logger import *
+from mathalgo2.algorithm.StrucAlgo import *
 from mathalgo2.BaseMath import *
+from mathalgo2.Code import *
+from mathalgo2.FileUtlies import *
+from mathalgo2.loading import *
+from mathalgo2.Logger import *
 from mathalgo2.MathUtiles import *
 from mathalgo2.Structure import *
 
-__all__ = [
-    "GraphAlgo",
-    "Searching",
-    "Sorting",
-    "StrAlgo",
-    "Optimization",
-    "CodeBase",
-    "ClassicalCipher",
-    "FileUtils",
-    "logger",
-    "Calculus",
-    "Matrix",
-    "Vector_space",
-    "MathUtils",
-    "Tree",
-    "TreeNode",
-    "Stack",
-    "Queue",
-    "LinkedList",
-    "LinkedListNode",
-    "Graph"
-]
-
+if sys.version_info < (3, 7):
+    raise RuntimeError("MathAlgo2 需要 Python 3.7 或更高版本")

@@ -1,0 +1,190 @@
+2024-12-29 10:56:37 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:56:37 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 10:56:37 - file_utiles - INFO - 開始讀取檔案: config.json
+2024-12-29 10:56:37 - file_utiles - ERROR - 檔案不存在: config.json
+2024-12-29 10:56:37 - file_utiles - ERROR - JSON 讀取錯誤: [WinError 2] 系統找不到指定的檔案。: 'config.json'
+2024-12-29 10:57:06 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:57:06 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 10:58:09 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 10:58:09 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:00:09 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:00:09 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:01:01 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:01:01 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:01:49 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:01:49 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:02:52 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:02:52 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:03:48 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:03:48 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:04:30 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:04:31 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:05:29 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:05:29 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:06:41 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:06:41 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:07:36 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:07:36 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:08:59 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:09:00 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:09:10 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:09:10 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:10:02 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:10:03 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:11:39 - file_utiles - INFO - 開始讀取檔案: t.txt
+2024-12-29 11:11:40 - file_utiles - INFO - 成功讀取檔案: t.txt
+2024-12-29 11:13:50 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_read_file_success0\test.txt
+2024-12-29 11:13:50 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_read_file_success0\test.txt
+2024-12-29 11:13:50 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:13:51 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:13:51 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:13:51 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:13:51 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_json_operations0\test.json
+2024-12-29 11:13:51 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_json_operations0\test.json
+2024-12-29 11:13:51 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_csv_operations0\test.csv
+2024-12-29 11:13:52 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_csv_operations0\test.csv
+2024-12-29 11:13:52 - file_utiles - ERROR - CSV 讀取錯誤: module 'pandas' has no attribute 'StringIO'
+2024-12-29 11:13:52 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:14:16 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:14:17 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:14:17 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_compression_operations0\archive.zip
+2024-12-29 11:14:17 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-31\test_compression_operations0\archive.zip
+2024-12-29 11:14:17 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:14:17 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:14:17 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:14:17 - file_utiles - INFO - 數據分析完成
+2024-12-29 11:14:35 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_read_file_success0\test.txt
+2024-12-29 11:14:35 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_read_file_success0\test.txt
+2024-12-29 11:14:35 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:14:35 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:14:35 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:14:35 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:14:36 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_json_operations0\test.json
+2024-12-29 11:14:36 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_json_operations0\test.json
+2024-12-29 11:14:36 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_csv_operations0\test.csv
+2024-12-29 11:14:36 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_csv_operations0\test.csv
+2024-12-29 11:14:36 - file_utiles - ERROR - CSV 讀取錯誤: module 'pandas' has no attribute 'StringIO'
+2024-12-29 11:14:37 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:14:43 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:14:45 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:14:45 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_compression_operations0\archive.zip
+2024-12-29 11:14:45 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-32\test_compression_operations0\archive.zip
+2024-12-29 11:14:45 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:14:45 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:14:45 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:14:45 - file_utiles - INFO - 數據分析完成
+2024-12-29 11:15:48 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_read_file_success0\test.txt
+2024-12-29 11:15:49 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_read_file_success0\test.txt
+2024-12-29 11:15:49 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:15:49 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:15:49 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:15:49 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:15:49 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_json_operations0\test.json
+2024-12-29 11:15:50 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_json_operations0\test.json
+2024-12-29 11:15:50 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_csv_operations0\test.csv
+2024-12-29 11:15:50 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_csv_operations0\test.csv
+2024-12-29 11:15:50 - file_utiles - ERROR - CSV 讀取錯誤: module 'pandas' has no attribute 'StringIO'
+2024-12-29 11:15:50 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:15:54 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:15:55 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:15:55 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_compression_operations0\archive.zip
+2024-12-29 11:15:55 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-33\test_compression_operations0\archive.zip
+2024-12-29 11:15:55 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:15:55 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:15:55 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:15:55 - file_utiles - INFO - 數據分析完成
+2024-12-29 11:16:42 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_read_file_success0\test.txt
+2024-12-29 11:16:43 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_read_file_success0\test.txt
+2024-12-29 11:16:43 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:16:43 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:16:43 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:16:43 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:16:43 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_json_operations0\test.json
+2024-12-29 11:16:43 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_json_operations0\test.json
+2024-12-29 11:16:44 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_csv_operations0\test.csv
+2024-12-29 11:16:44 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_csv_operations0\test.csv
+2024-12-29 11:16:44 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:16:58 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:17:06 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:17:06 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_compression_operations0\archive.zip
+2024-12-29 11:17:06 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-34\test_compression_operations0\archive.zip
+2024-12-29 11:17:06 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:17:06 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:17:06 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:17:06 - file_utiles - INFO - 數據分析完成
+2024-12-29 11:18:00 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_read_file_success0\test.txt
+2024-12-29 11:18:00 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_read_file_success0\test.txt
+2024-12-29 11:18:00 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:18:00 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:18:00 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:18:00 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:18:01 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_json_operations0\test.json
+2024-12-29 11:18:01 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_json_operations0\test.json
+2024-12-29 11:18:01 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_csv_operations0\test.csv
+2024-12-29 11:18:02 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_csv_operations0\test.csv
+2024-12-29 11:18:02 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:18:22 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:18:42 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:18:42 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_compression_operations0\archive.zip
+2024-12-29 11:18:42 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-35\test_compression_operations0\archive.zip
+2024-12-29 11:18:42 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:18:42 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:18:42 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:18:42 - file_utiles - INFO - 數據分析完成
+2024-12-29 11:19:50 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_read_file_success0\test.txt
+2024-12-29 11:19:50 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_read_file_success0\test.txt
+2024-12-29 11:19:50 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:19:50 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:19:50 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:19:50 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:19:51 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_json_operations0\test.json
+2024-12-29 11:19:51 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_json_operations0\test.json
+2024-12-29 11:19:51 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_csv_operations0\test.csv
+2024-12-29 11:19:52 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_csv_operations0\test.csv
+2024-12-29 11:19:52 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:20:12 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:20:32 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:20:32 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_compression_operations0\archive.zip
+2024-12-29 11:20:32 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-36\test_compression_operations0\archive.zip
+2024-12-29 11:20:32 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:20:32 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:20:32 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:20:32 - file_utiles - INFO - 數據分析完成
+2024-12-29 11:21:33 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_read_file_success0\test.txt
+2024-12-29 11:21:33 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_read_file_success0\test.txt
+2024-12-29 11:21:33 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:21:34 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_read_file_with_encoding0\encoded.txt
+2024-12-29 11:21:34 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2024-12-29 11:21:34 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2024-12-29 11:21:34 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_json_operations0\test.json
+2024-12-29 11:21:34 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_json_operations0\test.json
+2024-12-29 11:21:35 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_csv_operations0\test.csv
+2024-12-29 11:21:35 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_csv_operations0\test.csv
+2024-12-29 11:21:35 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:21:55 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_read_file_with_progress0\large_test.txt
+2024-12-29 11:22:15 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:22:15 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_compression_operations0\archive.zip
+2024-12-29 11:22:15 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-37\test_compression_operations0\archive.zip
+2024-12-29 11:22:15 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:22:15 - file_utiles - INFO - 初始化 FileProcessor
+2024-12-29 11:22:15 - file_utiles - INFO - 開始數據分析
+2024-12-29 11:22:15 - file_utiles - INFO - 數據分析完成
+2025-01-02 22:03:43 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_read_file_success0\test.txt
+2025-01-02 22:03:43 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_read_file_success0\test.txt
+2025-01-02 22:03:43 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_read_file_with_encoding0\encoded.txt
+2025-01-02 22:03:44 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_read_file_with_encoding0\encoded.txt
+2025-01-02 22:03:44 - file_utiles - INFO - 開始讀取檔案: nonexistent.txt
+2025-01-02 22:03:44 - file_utiles - ERROR - 檔案不存在: nonexistent.txt
+2025-01-02 22:03:44 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_json_operations0\test.json
+2025-01-02 22:03:44 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_json_operations0\test.json
+2025-01-02 22:03:44 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_csv_operations0\test.csv
+2025-01-02 22:03:45 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_csv_operations0\test.csv
+2025-01-02 22:03:45 - file_utiles - INFO - 開始讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_read_file_with_progress0\large_test.txt
+2025-01-02 22:04:05 - file_utiles - INFO - 成功讀取檔案: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_read_file_with_progress0\large_test.txt
+2025-01-02 22:04:25 - file_utiles - INFO - 初始化 FileProcessor
+2025-01-02 22:04:25 - file_utiles - INFO - 開始壓縮檔案到: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_compression_operations0\archive.zip
+2025-01-02 22:04:25 - file_utiles - INFO - 檔案壓縮完成: C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-38\test_compression_operations0\archive.zip
+2025-01-02 22:04:25 - file_utiles - INFO - 初始化 FileProcessor
+2025-01-02 22:04:25 - file_utiles - INFO - 初始化 FileProcessor
+2025-01-02 22:04:25 - file_utiles - INFO - 開始數據分析
+2025-01-02 22:04:25 - file_utiles - INFO - 數據分析完成
